@@ -1,0 +1,727 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celebration Portal • Stackly Luxury Events</title>
+  <meta name="description" content="View and manage your royal celebration passes, digital QR check-in tickets, and concierge itinerary with Stackly.">
+  
+  <!-- Fonts & Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="page-dashboard-user">
+
+  <!-- Application Layout Wrapper -->
+  <div class="dash-app-layout">
+    
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="dash-sidebar-overlay" id="dash-sidebar-overlay"></div>
+
+    <!-- ==========================================================================
+         DEDICATED LUXURY SIDEBAR NAVIGATION
+         ========================================================================== -->
+    <aside class="dash-sidebar" id="dash-sidebar" aria-label="Client Portal Sidebar">
+      
+      <!-- Brand Logo Header -->
+      <div class="dash-sidebar-header">
+        <a href="index.html" class="nav-brand" aria-label="Stackly Homepage">
+          <svg class="nav-brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="398 82 212 290" aria-label="Stackly Logo"><defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f6e27a"/><stop offset="50%" style="stop-color:#d4af37"/><stop offset="100%" style="stop-color:#aa771c"/></linearGradient></defs><path fill="url(#goldGrad)" d="M419.713867,256.179962 C408.001251,235.739304 410.215973,215.613876 419.889709,195.679504 C426.373138,182.319229 436.255493,171.444672 446.508270,160.904480 C457.075165,150.041229 468.783997,140.348602 478.792694,128.896606 C487.411407,119.035004 494.797852,108.464394 500.031921,96.425682 C500.738983,94.799370 501.001617,92.854477 502.785980,91.712807 C503.214905,91.838028 503.879059,91.821617 504.103485,92.127670 C514.526489,106.341171 522.003967,121.483376 518.287415,139.859406 C515.933533,151.498276 508.987885,160.308563 500.296600,167.942245 C487.788574,178.928223 473.634369,187.949692 462.046570,200.037262 C456.219025,206.116135 451.191589,212.659836 449.149933,221.054688 C445.376373,236.570572 454.272034,249.198563 470.197021,250.779221 C485.241028,252.272446 499.302216,248.880798 512.632202,241.996979 C514.021362,241.279602 515.213196,239.793518 517.062500,240.547546 C517.833252,242.063324 516.690857,242.794266 515.917847,243.562866 C502.480865,256.923462 487.519073,267.973206 468.591339,271.949402 C447.923096,276.291199 431.269562,272.383606 419.713867,256.179962Z"/><path fill="url(#goldGrad)" d="M536.351807,311.352905 C521.089722,325.623138 508.631836,341.451172 501.644409,361.304535 C500.580017,360.856842 499.799347,360.777496 499.458496,360.348633 C491.323975,350.113098 485.458466,338.909088 484.707672,325.531189 C484.034546,313.536499 489.236786,303.909576 496.947052,295.363251 C506.737030,284.511749 519.089050,276.702271 530.329102,267.573334 C539.676453,259.981689 548.930542,252.352356 553.649658,240.719803 C556.247925,234.315125 556.803040,227.722214 555.167542,221.122284 C551.964783,208.197189 539.399353,200.886032 526.174622,203.877502 C513.911682,206.651428 503.242737,212.702515 493.079834,219.823700 C492.039246,220.552856 491.267578,221.851700 489.661957,221.557190 C488.659760,220.289383 489.653076,219.345703 490.287292,218.480408 C503.850159,199.976334 521.506714,187.674316 544.321167,183.636948 C574.742554,178.253418 599.437622,199.883118 594.804749,234.346802 C592.539368,251.198425 583.628967,264.794067 572.581299,277.156372 C561.558105,289.491241 548.610413,299.803345 536.351807,311.352905Z"/></svg>
+          <div class="nav-brand-text">STACKLY<span>.</span></div>
+        </a>
+        <button type="button" class="dash-sidebar-close" id="dash-sidebar-close" aria-label="Close sidebar">✕</button>
+      </div>
+
+      <!-- Compact Host Identity Card -->
+      <div class="dash-sidebar-user">
+        <div class="dash-sidebar-user-avatar user-avatar-display">A</div>
+        <div class="dash-sidebar-user-meta">
+          <strong class="dash-sidebar-user-name user-name-display">Ananya Sharma</strong>
+          <span class="dash-sidebar-user-role">✦ VIP Client Host</span>
+        </div>
+      </div>
+
+      <!-- Section: Main Menu -->
+      <div class="dash-sidebar-group-label">EXPERIENCE MENU</div>
+      <nav class="dash-sidebar-nav" id="dash-user-nav">
+        <button type="button" class="dash-sidebar-btn active" data-tab="overview">
+          <div class="dash-sidebar-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            <span>Overview</span>
+          </div>
+        </button>
+
+        <button type="button" class="dash-sidebar-btn" data-tab="passes">
+          <div class="dash-sidebar-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span>My Passes</span>
+          </div>
+          <span class="dash-sidebar-badge">2</span>
+        </button>
+
+        <button type="button" class="dash-sidebar-btn" data-tab="schedule">
+          <div class="dash-sidebar-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Milestone Schedule</span>
+          </div>
+        </button>
+
+        <button type="button" class="dash-sidebar-btn" data-tab="concierge">
+          <div class="dash-sidebar-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <span>VIP Concierge</span>
+          </div>
+          <span class="dash-sidebar-badge" style="background: rgba(76, 217, 100, 0.18); color: #4cd964; border-color: rgba(76, 217, 100, 0.4);">Active</span>
+        </button>
+
+        <button type="button" class="dash-sidebar-btn" data-tab="rewards">
+          <div class="dash-sidebar-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            <span>Credits &amp; Rewards</span>
+          </div>
+          <span class="dash-sidebar-badge">₹350</span>
+        </button>
+
+        <button type="button" class="dash-sidebar-btn" data-tab="profile">
+          <div class="dash-sidebar-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span>Host Profile</span>
+          </div>
+        </button>
+      </nav>
+
+      <!-- Sidebar Bottom Shortcuts -->
+      <div class="dash-sidebar-footer">
+        <a href="index.html" class="dash-sidebar-footer-link" title="Return to Stackly Homepage">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Exit to Website</span>
+        </a>
+        <button type="button" class="dash-sidebar-footer-link btn-dash-logout" id="sidebar-logout-btn" title="Sign out of portal">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          <span>Sign Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+         MAIN CONTENT AREA (TOP BAR + DYNAMIC TAB PANES)
+         ========================================================================== -->
+    <div class="dash-main-area">
+      
+      <!-- Top Responsive Bar -->
+      <header class="dash-top-bar">
+        <div class="dash-top-bar-left">
+          <button type="button" class="dash-sidebar-toggle" id="dash-sidebar-toggle" aria-label="Open sidebar menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="dash-view-title">
+            <span style="color: var(--color-text-secondary); font-size: 14px;">Portal /</span>
+            <span class="active-crumb" id="dash-active-title">Client Overview</span>
+          </div>
+        </div>
+
+        <div class="dash-top-bar-actions">
+          <a href="events.html" class="btn btn-primary" style="min-height: 38px; padding: 6px 16px; font-size: 12.5px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            <span>Book Milestone</span>
+          </a>
+          <button type="button" class="btn-dash-action btn-dash-logout" id="global-logout-btn" title="Sign out of portal">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+            <span>Logout</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Central Scrollable Container -->
+      <main class="dash-content-container">
+
+        <!-- ====================================================================
+             TAB 1: OVERVIEW
+             ==================================================================== -->
+        <section class="dash-tab-pane active" id="tab-overview">
+          
+          <!-- Top Profile Welcome Card -->
+          <div class="dash-header-card">
+            <div class="dash-user-profile">
+              <div class="dash-avatar-circle user-avatar-display">A</div>
+              <div class="dash-profile-info">
+                <h1>Welcome, <span class="user-name-display">Ananya Sharma</span></h1>
+                <div class="dash-profile-meta">
+                  <span class="role-badge-pill role-badge-user">✦ VIP Client Host</span>
+                  <span class="dash-profile-email user-email-display">client@stackly.com</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-header-actions">
+              <button type="button" class="btn btn-primary btn-tab-trigger" data-target="passes" style="min-height: 44px; padding: 10px 20px; font-size: 13px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+                View My Passes
+              </button>
+            </div>
+          </div>
+
+          <!-- 4 Key Metrics -->
+          <div class="dash-metrics-grid">
+            <div class="metric-card">
+              <div class="metric-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="18" y2="10"></line></svg>
+              </div>
+              <div class="metric-label">Active Passes</div>
+              <div class="metric-value">2 Events</div>
+              <div class="metric-sub">Confirmed &amp; QR Generated</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="metric-label">Next Celebration</div>
+              <div class="metric-value">Nov 18</div>
+              <div class="metric-sub">Taj Vivanta Palace, Salem</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div class="metric-label">Salem Concierge</div>
+              <div class="metric-value">Active</div>
+              <div class="metric-sub">Lead Coordinator Assigned</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <div class="metric-label">Reward Balance</div>
+              <div class="metric-value">₹350</div>
+              <div class="metric-sub">Gold Loyalty Credit Tier</div>
+            </div>
+          </div>
+
+          <!-- Spotlight: Next Upcoming Celebration -->
+          <div style="background: linear-gradient(145deg, rgba(26, 26, 36, 0.95) 0%, rgba(14, 14, 20, 0.98) 100%); border: 1px solid var(--color-border-gold); border-radius: var(--radius-xl); padding: 28px 32px; margin-top: 30px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
+              <div style="display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 20px; background: rgba(212, 175, 55, 0.15); border: 1px solid var(--color-accent-gold); color: var(--color-accent-gold-light); font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;">
+                ✦ IMMEDIATE UPCOMING MILESTONE
+              </div>
+              <span style="font-size: 13px; color: var(--color-accent-gold-light);">Countdown: 56 Days Remaining</span>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; align-items: center;">
+              <div>
+                <h2 style="font-family: var(--font-heading); font-size: 24px; color: #ffffff; margin-bottom: 8px;">The Royal Grand Palace Wedding &amp; Reception</h2>
+                <p style="font-size: 13.5px; color: var(--color-text-secondary); margin-bottom: 16px; line-height: 1.6;">
+                  Hosted at Taj Vivanta Palace, Salem. Featuring authentic Kongu wedding rituals, royal Mandap floral architecture, 7-course feast, and private bridal suite concierge.
+                </p>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                  <button type="button" class="btn btn-primary btn-view-qr" data-pass-id="STK-WED-901" style="min-height: 40px; padding: 8px 18px; font-size: 12.5px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>View Digital QR Pass</span>
+                  </button>
+                  <button type="button" class="btn btn-secondary btn-tab-trigger" data-target="schedule" style="min-height: 40px; padding: 8px 18px; font-size: 12.5px;">
+                    View Timeline Itinerary &rarr;
+                  </button>
+                </div>
+              </div>
+              <div style="border-radius: var(--radius-md); overflow: hidden; height: 190px; border: 1px solid rgba(212, 175, 55, 0.35); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);">
+                <img src="assets/img-1519741497674-611481863552.webp" alt="Taj Vivanta Palace Wedding" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions Grid -->
+          <div style="margin-top: 35px;">
+            <div class="dash-section-header" style="margin-bottom: 16px;">
+              <h3 class="dash-section-title" style="font-size: 20px;">Quick Portal Actions</h3>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+              <button type="button" class="btn-tab-trigger" data-target="passes" style="background: rgba(22, 22, 30, 0.8); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 20px; text-align: left; cursor: pointer; transition: all 0.2s ease;">
+                <div style="color: var(--color-accent-gold); font-size: 22px; margin-bottom: 10px;">🎟️</div>
+                <strong style="color: #ffffff; font-size: 15px; display: block; margin-bottom: 4px;">Download Passes</strong>
+                <span style="color: var(--color-text-secondary); font-size: 12px;">Save printable PDF guest check-in passes</span>
+              </button>
+              <button type="button" class="btn-tab-trigger" data-target="concierge" style="background: rgba(22, 22, 30, 0.8); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 20px; text-align: left; cursor: pointer; transition: all 0.2s ease;">
+                <div style="color: var(--color-accent-gold); font-size: 22px; margin-bottom: 10px;">💬</div>
+                <strong style="color: #ffffff; font-size: 15px; display: block; margin-bottom: 4px;">Request Concierge</strong>
+                <span style="color: var(--color-text-secondary); font-size: 12px;">Submit custom dietary or floral adjustments</span>
+              </button>
+              <button type="button" class="btn-tab-trigger" data-target="rewards" style="background: rgba(22, 22, 30, 0.8); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 20px; text-align: left; cursor: pointer; transition: all 0.2s ease;">
+                <div style="color: var(--color-accent-gold); font-size: 22px; margin-bottom: 10px;">🎁</div>
+                <strong style="color: #ffffff; font-size: 15px; display: block; margin-bottom: 4px;">Redeem ₹350 Perks</strong>
+                <span style="color: var(--color-text-secondary); font-size: 12px;">Add complimentary drone photography or car service</span>
+              </button>
+              <button type="button" class="btn-tab-trigger" data-target="profile" style="background: rgba(22, 22, 30, 0.8); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 20px; text-align: left; cursor: pointer; transition: all 0.2s ease;">
+                <div style="color: var(--color-accent-gold); font-size: 22px; margin-bottom: 10px;">⚙️</div>
+                <strong style="color: #ffffff; font-size: 15px; display: block; margin-bottom: 4px;">Host Profile</strong>
+                <span style="color: var(--color-text-secondary); font-size: 12px;">Update contact details and celebration preferences</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 2: MY PASSES
+             ==================================================================== -->
+        <section class="dash-tab-pane" id="tab-passes">
+          <div class="dash-section-header">
+            <div>
+              <h2 class="dash-section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-gold);"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+                My Booked Celebrations
+              </h2>
+              <span style="font-size: 13px; color: var(--color-text-secondary);">Showing 2 active milestone reservations with verified QR digital tickets</span>
+            </div>
+            <a href="events.html" class="btn btn-primary" style="min-height: 40px; padding: 8px 18px; font-size: 12.5px;">+ Book Another Milestone</a>
+          </div>
+
+          <div class="dash-passes-grid">
+            
+            <!-- Pass Card 1: Palace Wedding -->
+            <div class="booked-pass-card">
+              <div class="pass-card-top">
+                <div class="pass-card-thumb">
+                  <img src="assets/img-1519741497674-611481863552.webp" alt="Taj Vivanta Palace Wedding">
+                </div>
+                <div class="pass-card-details">
+                  <div>
+                    <div class="pass-badge-row">
+                      <span class="pass-category-pill">Royal Wedding</span>
+                      <span class="pass-status-pill status-confirmed">✓ Confirmed</span>
+                    </div>
+                    <h3 class="pass-card-title">The Royal Grand Palace Wedding &amp; Reception</h3>
+                  </div>
+                  <div class="pass-meta-row">
+                    <span class="pass-meta-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="18" y2="10"></line></svg>
+                      Nov 18, 2026 (6:30 PM)
+                    </span>
+                    <span class="pass-meta-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                      Taj Vivanta, Salem
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pass-perforation-divider"></div>
+
+              <div class="pass-card-bottom">
+                <div class="pass-id-info">
+                  <div>TICKET PASS ID</div>
+                  <div class="pass-id-code">STK-WED-901</div>
+                </div>
+                <div class="pass-actions-group">
+                  <button type="button" class="btn-view-qr" data-pass-id="STK-WED-901">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    Digital QR Ticket
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pass Card 2: DJ & Sangeet Night -->
+            <div class="booked-pass-card">
+              <div class="pass-card-top">
+                <div class="pass-card-thumb">
+                  <img src="assets/img-1516450360452-9312f5e86fc7.webp" alt="Sangeet Dance Night">
+                </div>
+                <div class="pass-card-details">
+                  <div>
+                    <div class="pass-badge-row">
+                      <span class="pass-category-pill">Dancing &amp; Sangeet</span>
+                      <span class="pass-status-pill status-confirmed">✓ Confirmed</span>
+                    </div>
+                    <h3 class="pass-card-title">Bollywood Beats &amp; Sangeet Dance Night</h3>
+                  </div>
+                  <div class="pass-meta-row">
+                    <span class="pass-meta-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="18" y2="10"></line></svg>
+                      Dec 05, 2026 (8:00 PM)
+                    </span>
+                    <span class="pass-meta-item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                      Stackly Arena, Salem
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pass-perforation-divider"></div>
+
+              <div class="pass-card-bottom">
+                <div class="pass-id-info">
+                  <div>TICKET PASS ID</div>
+                  <div class="pass-id-code">STK-DANCE-408</div>
+                </div>
+                <div class="pass-actions-group">
+                  <button type="button" class="btn-view-qr" data-pass-id="STK-DANCE-408">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    Digital QR Ticket
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 3: MILESTONE SCHEDULE
+             ==================================================================== -->
+        <section class="dash-tab-pane" id="tab-schedule">
+          <div class="dash-section-header">
+            <div>
+              <h2 class="dash-section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-gold);"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Milestone Schedule &amp; Day-of Itinerary
+              </h2>
+              <span style="font-size: 13px; color: var(--color-text-secondary);">Real-time itinerary for The Royal Grand Palace Wedding &bull; Nov 18, 2026</span>
+            </div>
+            <div style="font-size: 13px; color: var(--color-accent-gold-light); background: rgba(212, 175, 55, 0.15); padding: 8px 16px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.35);">
+              📍 Venue: Taj Vivanta Palace, Salem
+            </div>
+          </div>
+
+          <div class="timeline-track" data-stagger>
+            
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item" data-animate="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card" data-animate="fade-up">
+                <div class="timeline-header">
+                  <span class="timeline-time">04:00 PM – 05:30 PM</span>
+                  <span class="timeline-venue-pill">Bridal &amp; Groom Suites</span>
+                </div>
+                <h4 class="timeline-title">Bridal Adornment &amp; Royal Portraiture</h4>
+                <p class="timeline-desc">
+                  Exclusive makeup artistry, traditional silk drape styling, and private pre-ceremony 4K photo sessions with Stackly's lead cinematic team.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item" data-animate="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card" data-animate="fade-up">
+                <div class="timeline-header">
+                  <span class="timeline-time">06:00 PM – 06:45 PM</span>
+                  <span class="timeline-venue-pill">Palace Grand Entrance</span>
+                </div>
+                <h4 class="timeline-title">Baraat Arrival &amp; Royal Welcome Aarti</h4>
+                <p class="timeline-desc">
+                  Vintage car arrival escorted by traditional Nadaswaram musicians, rose petal shower, and welcoming of distinguished Salem dignitaries and family hosts.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item" data-animate="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card" data-animate="fade-up">
+                <div class="timeline-header">
+                  <span class="timeline-time">07:00 PM – 08:15 PM</span>
+                  <span class="timeline-venue-pill">Lotus Mandap Stage</span>
+                </div>
+                <h4 class="timeline-title">Sacred Muhurtham &amp; Varmala Ceremony</h4>
+                <p class="timeline-desc">
+                  Vedic chants, sacred fire circumambulation (Saptapadi), exchange of floral garlands under hand-carved floral brass arches, and live flute accompaniment.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 4 -->
+            <div class="timeline-item" data-animate="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card" data-animate="fade-up">
+                <div class="timeline-header">
+                  <span class="timeline-time">08:30 PM – 10:30 PM</span>
+                  <span class="timeline-venue-pill">Grand Crystal Ballroom</span>
+                </div>
+                <h4 class="timeline-title">Palatial Banqueting Dinner &amp; Michelin-Standard Feast</h4>
+                <p class="timeline-desc">
+                  Silver-service Kongu, Chettinad, and Awadhi culinary experience curated by Master Chefs, artisanal live chaat stations, and handcrafted South Indian filter coffee bar.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 5 -->
+            <div class="timeline-item" data-animate="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card" data-animate="fade-up">
+                <div class="timeline-header">
+                  <span class="timeline-time">10:30 PM – Midnight</span>
+                  <span class="timeline-venue-pill">Starlight Open Terrace</span>
+                </div>
+                <h4 class="timeline-title">Celebratory Sangeet Music &amp; DJ Dance Night</h4>
+                <p class="timeline-desc">
+                  DJ spin session, choreographed family dance spotlight, golden sparklers send-off, and distribution of bespoke silver celebration mementos.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 4: VIP CONCIERGE
+             ==================================================================== -->
+        <section class="dash-tab-pane" id="tab-concierge">
+          <div class="dash-section-header">
+            <div>
+              <h2 class="dash-section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-gold);"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                VIP Salem Concierge Desk
+              </h2>
+              <span style="font-size: 13px; color: var(--color-text-secondary);">Direct access to your dedicated Chief Celebration Marshal and on-site coordinators</span>
+            </div>
+            <a href="tel:+919876543210" class="btn btn-secondary" style="min-height: 40px; padding: 8px 18px; font-size: 12.5px;">Call Desk: +91 98765 43210</a>
+          </div>
+
+          <!-- Salem Studio Office Banner -->
+          <div style="background: linear-gradient(145deg, rgba(22, 22, 30, 0.95) 0%, rgba(12, 12, 16, 0.98) 100%); border: 1px solid rgba(212, 175, 55, 0.35); border-radius: var(--radius-xl); padding: 28px 32px; margin-bottom: 28px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+              <div>
+                <strong style="color: var(--color-accent-gold-light); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;">ON-DUTY LEAD MARSHAL</strong>
+                <div style="font-size: 18px; font-weight: 800; color: #ffffff; margin: 4px 0;">Vikramaditya Roy</div>
+                <div style="font-size: 13px; color: var(--color-text-secondary);">Direct: +91 98765 43210 &bull; Ext. 104</div>
+              </div>
+              <div>
+                <strong style="color: var(--color-accent-gold-light); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;">HEADQUARTERS STUDIO</strong>
+                <div style="font-size: 15px; font-weight: 700; color: #ffffff; margin: 4px 0;">Stackly Celebration Suites</div>
+                <div style="font-size: 13px; color: var(--color-text-secondary);">Chinna Tirupathi, Salem, TN – 636008</div>
+              </div>
+              <div>
+                <strong style="color: var(--color-accent-gold-light); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;">AVERAGE RESPONSE TIME</strong>
+                <div style="font-size: 18px; font-weight: 800; color: #4cd964; margin: 4px 0;">Under 8 Minutes</div>
+                <div style="font-size: 13px; color: var(--color-text-secondary);">24/7 dedicated event hotline</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Concierge Request Form -->
+          <div style="background: linear-gradient(145deg, rgba(22, 22, 30, 0.9) 0%, rgba(12, 12, 16, 0.95) 100%); border: 1px solid rgba(212, 175, 55, 0.35); border-radius: var(--radius-xl); padding: 32px 36px; margin-bottom: 30px;">
+            <h3 style="font-family: var(--font-heading); font-size: 20px; color: #ffffff; margin-bottom: 6px;">Submit Milestone Special Request</h3>
+            <p style="font-size: 13.5px; color: var(--color-text-secondary); margin-bottom: 20px;">
+              Request specialized floral changes, dietary adjustments (Jain, Vegan, Nut-Free), stage lighting revisions, or VIP guest airport transfers.
+            </p>
+
+            <form id="concierge-request-form">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 16px;">
+                <div>
+                  <label class="auth-label" for="req-event">For Celebration</label>
+                  <select id="req-event" class="admin-filter-select" style="width: 100%;">
+                    <option>The Royal Grand Palace Wedding (Nov 18, 2026)</option>
+                    <option>Bollywood Beats &amp; Sangeet Dance Night (Dec 05, 2026)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="auth-label" for="req-category">Request Department</label>
+                  <select id="req-category" class="admin-filter-select" style="width: 100%;">
+                    <option>Catering &amp; Special Diet (Jain, Vegan)</option>
+                    <option>Mandap &amp; Floral Decor Adjustment</option>
+                    <option>VIP Security &amp; Dignitary Escort</option>
+                    <option>Luxury Vintage Car Transfer</option>
+                    <option>Audio, DJ &amp; Lighting Customization</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <label class="auth-label" for="concierge-message">Details &amp; Specific Instructions</label>
+                <textarea id="concierge-message" rows="3" placeholder="Describe your exact request or itinerary customization..." required style="width: 100%; background: rgba(10, 10, 14, 0.9); border: 1px solid rgba(212, 175, 55, 0.35); border-radius: var(--radius-sm); padding: 12px 16px; color: #ffffff; outline: none; font-size: 14px; font-family: var(--font-body);"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="min-height: 44px; min-width: 180px; font-size: 13px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                <span>Transmit to Salem Marshal</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Recent Requests Activity -->
+          <div style="background: rgba(18, 18, 24, 0.8); border: 1px solid rgba(212, 175, 55, 0.25); border-radius: var(--radius-md); padding: 24px;">
+            <h4 style="font-family: var(--font-heading); font-size: 16px; color: #ffffff; margin-bottom: 14px;">Recent Concierge Activity</h4>
+            <div style="display: flex; flex-direction: column; gap: 12px;" id="concierge-log-list">
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: rgba(10, 10, 14, 0.6); border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.15);">
+                <div>
+                  <strong style="color: #ffffff; font-size: 13.5px;">Jain Vegetarian Table for 14 Family Guests</strong>
+                  <div style="font-size: 12px; color: var(--color-text-secondary);">The Royal Grand Palace Wedding &bull; Submitted 2 days ago</div>
+                </div>
+                <span class="pass-status-pill status-confirmed">✓ Confirmed by Chef</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: rgba(10, 10, 14, 0.6); border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.15);">
+                <div>
+                  <strong style="color: #ffffff; font-size: 13.5px;">Champagne Cold Pyrotechnics for First Dance</strong>
+                  <div style="font-size: 12px; color: var(--color-text-secondary);">Bollywood Beats &amp; Sangeet &bull; Submitted 5 days ago</div>
+                </div>
+                <span class="pass-status-pill" style="background: rgba(212, 175, 55, 0.2); color: var(--color-accent-gold-light);">In Marshal Review</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 5: CREDITS & REWARDS
+             ==================================================================== -->
+        <section class="dash-tab-pane" id="tab-rewards">
+          <div class="dash-section-header">
+            <div>
+              <h2 class="dash-section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-gold);"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                Stackly Royal Loyalty &amp; Rewards
+              </h2>
+              <span style="font-size: 13px; color: var(--color-text-secondary);">Earn reward credits on every milestone celebration to unlock exclusive luxury upgrades</span>
+            </div>
+          </div>
+
+          <!-- Loyalty Card Banner -->
+          <div style="background: linear-gradient(135deg, rgba(30, 26, 15, 0.95) 0%, rgba(12, 12, 16, 0.98) 100%); border: 1px solid var(--color-accent-gold); border-radius: var(--radius-xl); padding: 32px; box-shadow: 0 15px 45px rgba(0, 0, 0, 0.8), var(--gold-border-glow); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div>
+              <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: var(--color-accent-gold-light); text-transform: uppercase;">PREMIUM PATRON TIER</div>
+              <div style="font-family: var(--font-heading); font-size: 32px; font-weight: 800; color: #ffffff; margin: 4px 0;">Gold Sovereign Club</div>
+              <div style="font-size: 13.5px; color: var(--color-text-secondary);">Host ID: STK-VIP-8812 &bull; Salem Member Since 2024</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 12px; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">AVAILABLE CREDIT BALANCE</div>
+              <div style="font-family: var(--font-heading); font-size: 42px; font-weight: 800; color: var(--color-accent-gold-light);">₹350<span style="font-size: 20px; font-weight: 600; color: var(--color-text-secondary);">.00</span></div>
+              <div style="font-size: 12px; color: #4cd964;">✓ 100% Usable for upcoming milestone upgrades</div>
+            </div>
+          </div>
+
+          <!-- Redeemable Perks Catalog -->
+          <h3 style="font-family: var(--font-heading); font-size: 20px; color: #ffffff; margin-top: 35px; margin-bottom: 6px;">Available Celebration Perks to Redeem</h3>
+          <p style="font-size: 13.5px; color: var(--color-text-secondary);">Instantly apply your credit balance to add extraordinary touches to your celebration:</p>
+
+          <div class="perks-grid" data-stagger>
+            
+            <div class="perk-card" data-animate="fade-up">
+              <div class="perk-card-top">
+                <span class="perk-badge">CINEMATIC ADD-ON</span>
+                <h4 class="perk-title">4K Drone Aerial Videography</h4>
+                <p class="perk-desc">Full 45-minute licensed aerial footage capturing palace arrival, outdoor fireworks, and grand guest entrance.</p>
+              </div>
+              <div class="perk-card-bottom">
+                <div class="perk-cost">₹150 <small>Redeemable Credits</small></div>
+                <button type="button" class="btn-redeem-perk" data-perk="4K Drone Aerial Videography" data-cost="150">Redeem Perk</button>
+              </div>
+            </div>
+
+            <div class="perk-card" data-animate="fade-up">
+              <div class="perk-card-top">
+                <span class="perk-badge">LUXURY MOTORCADE</span>
+                <h4 class="perk-title">Vintage Rolls-Royce Chauffeur</h4>
+                <p class="perk-desc">Chauffeured arrival in a 1968 restored classic royal car for the bride &amp; groom with Salem police escort permits.</p>
+              </div>
+              <div class="perk-card-bottom">
+                <div class="perk-cost">₹200 <small>Redeemable Credits</small></div>
+                <button type="button" class="btn-redeem-perk" data-perk="Vintage Rolls-Royce Chauffeur" data-cost="200">Redeem Perk</button>
+              </div>
+            </div>
+
+            <div class="perk-card" data-animate="fade-up">
+              <div class="perk-card-top">
+                <span class="perk-badge">GOURMET CATERING</span>
+                <h4 class="perk-title">Midnight Artisanal Gelato Bar</h4>
+                <p class="perk-desc">Live frozen nitro gelato cart with 6 custom flavours crafted with fresh Salem Alphonso mangoes and pistachio cream.</p>
+              </div>
+              <div class="perk-card-bottom">
+                <div class="perk-cost">₹100 <small>Redeemable Credits</small></div>
+                <button type="button" class="btn-redeem-perk" data-perk="Midnight Artisanal Gelato Bar" data-cost="100">Redeem Perk</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 6: HOST PROFILE
+             ==================================================================== -->
+        <section class="dash-tab-pane" id="tab-profile">
+          <div class="dash-section-header">
+            <div>
+              <h2 class="dash-section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-gold);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Celebration Host Profile &amp; Preferences
+              </h2>
+              <span style="font-size: 13px; color: var(--color-text-secondary);">Manage your contact details, emergency notifications, and celebration tastes</span>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(145deg, rgba(22, 22, 30, 0.9) 0%, rgba(12, 12, 16, 0.95) 100%); border: 1px solid rgba(212, 175, 55, 0.35); border-radius: var(--radius-xl); padding: 36px;">
+            <form id="host-profile-form">
+              <div class="form-grid-2col" style="margin-bottom: 18px;">
+                <div class="auth-form-group">
+                  <label class="auth-label" for="prof-name">Full Name</label>
+                  <input type="text" id="prof-name" class="auth-input" value="Ananya Sharma" required>
+                </div>
+                <div class="auth-form-group">
+                  <label class="auth-label" for="prof-email">Email Address</label>
+                  <input type="email" id="prof-email" class="auth-input" value="client@stackly.com" required>
+                </div>
+              </div>
+
+              <div class="form-grid-2col" style="margin-bottom: 18px;">
+                <div class="auth-form-group">
+                  <label class="auth-label" for="prof-phone">Contact Phone</label>
+                  <input type="tel" id="prof-phone" class="auth-input" value="+91 98401 23456" required>
+                </div>
+                <div class="auth-form-group">
+                  <label class="auth-label" for="prof-city">Primary City / Region</label>
+                  <input type="text" id="prof-city" class="auth-input" value="Salem, Tamil Nadu" required>
+                </div>
+              </div>
+
+              <div class="form-grid-2col" style="margin-bottom: 24px;">
+                <div class="auth-form-group">
+                  <label class="auth-label" for="prof-style">Preferred Celebration Style</label>
+                  <select id="prof-style" class="admin-filter-select" style="width: 100%;">
+                    <option selected>Royal Kongu Heritage &amp; Palace Glamour</option>
+                    <option>Contemporary Minimalist High-Fashion</option>
+                    <option>Bollywood Vibrant Sangeet Carnival</option>
+                    <option>Traditional Sacred Temple Ceremony</option>
+                  </select>
+                </div>
+                <div class="auth-form-group">
+                  <label class="auth-label" for="prof-diet">Family Dietary Preferences</label>
+                  <input type="text" id="prof-diet" class="auth-input" value="South Indian Pure Vegetarian &amp; Jain Friendly">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="min-height: 44px; padding: 10px 24px; font-size: 13px;">
+                <span>Save Profile Preferences</span>
+              </button>
+            </form>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Dedicated Minimal Footer -->
+      <footer class="dash-footer">
+        <div class="dash-footer-inner">
+          <div class="dash-footer-brand">
+            <span style="font-weight: 800; color: #ffffff; letter-spacing: 0.06em;">STACKLY CELEBRATION PORTAL</span>
+            <span style="margin: 0 8px; color: var(--color-accent-gold);">&bull;</span>
+            <span>Client Suite &bull; Chinna Tirupathi, Salem</span>
+          </div>
+          <div class="dash-footer-copy">
+            &copy; 2026 Stackly Events &amp; Celebration Planners. All rights reserved.
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

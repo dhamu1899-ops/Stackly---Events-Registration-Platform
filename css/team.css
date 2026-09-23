@@ -1,0 +1,245 @@
+/* ==========================================================================
+   STACKLY THEME - TEAM & CURATORS PAGE STYLES (PRD COMPLIANT)
+   5 Unique Sections with Asymmetric Portraits and Artisan Profiles
+   ========================================================================== */
+
+.team-hero {
+  position: relative;
+  padding: 85px 24px 70px;
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.14) 0%, transparent 65%),
+              linear-gradient(rgba(10, 10, 12, 0.92), rgba(10, 10, 12, 0.98)),
+              #0a0a0c;
+  border-bottom: 1px solid var(--color-border-gold, rgba(212, 175, 55, 0.3));
+  text-align: center;
+}
+
+.team-hero-title {
+  font-family: var(--font-heading);
+  font-size: 50px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 14px;
+  letter-spacing: 0.01em;
+}
+
+.team-hero-desc {
+  font-size: 17px;
+  color: var(--color-text-secondary, #b8b2a7);
+  max-width: 640px;
+  margin: 0 auto 24px;
+  line-height: 1.6;
+}
+
+/* Section 2: Leadership Spotlight */
+.leadership-spotlight {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.leadership-portrait-box {
+  position: relative;
+  height: 480px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 2px solid var(--color-border-gold-strong, rgba(212, 175, 55, 0.7));
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(212, 175, 55, 0.2);
+}
+
+.leadership-portrait-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.leadership-badge-tag {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(10, 10, 12, 0.92);
+  border: 1px solid var(--color-accent-gold, #d4af37);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-accent-gold-light, #f6e27a);
+  backdrop-filter: blur(8px);
+}
+
+.leadership-content h3 {
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.leadership-role {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-accent-gold, #d4af37);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.leadership-bio {
+  font-size: 15px;
+  color: var(--color-text-secondary, #b8b2a7);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* Section 3: Master Artisans Grid */
+.artisans-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 45px;
+}
+
+.artisan-card {
+  background: rgba(22, 22, 28, 0.85);
+  border: 1px solid var(--color-border-gold, rgba(212, 175, 55, 0.3));
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.artisan-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-accent-gold, #d4af37);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.artisan-photo-wrapper {
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+}
+
+.artisan-photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.artisan-card:hover .artisan-photo-wrapper img {
+  transform: scale(1.08);
+}
+
+.artisan-info {
+  padding: 22px;
+}
+
+.artisan-name {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.artisan-craft {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent-gold, #d4af37);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.artisan-desc {
+  font-size: 13px;
+  color: var(--color-text-secondary, #b8b2a7);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Section 4: The 4 Pillars Craftsmanship Matrix */
+.pillars-matrix {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 45px;
+}
+
+.pillar-node {
+  background: linear-gradient(180deg, rgba(24, 24, 32, 0.9) 0%, rgba(14, 14, 18, 0.95) 100%);
+  border: 1px solid var(--color-border-gold, rgba(212, 175, 55, 0.3));
+  border-radius: var(--radius-lg, 16px);
+  padding: 32px 24px;
+  position: relative;
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.pillar-node:hover {
+  border-color: var(--color-accent-gold, #d4af37);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(212, 175, 55, 0.25);
+}
+
+.pillar-node-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid var(--color-accent-gold, #d4af37);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: var(--color-accent-gold-light);
+}
+
+.pillar-node-num {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-accent-gold, #d4af37);
+  margin-bottom: 6px;
+}
+
+.pillar-node h4 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.pillar-node p {
+  font-size: 13px;
+  color: var(--color-text-secondary, #b8b2a7);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1023px) {
+  .leadership-spotlight {
+    grid-template-columns: 1fr;
+  }
+  .artisans-grid,
+  .pillars-matrix {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .artisans-grid,
+  .pillars-matrix {
+    grid-template-columns: 1fr;
+  }
+  .team-hero-title {
+    font-size: 36px;
+  }
+}

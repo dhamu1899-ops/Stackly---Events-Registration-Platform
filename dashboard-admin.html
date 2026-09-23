@@ -1,0 +1,649 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operations Console • Stackly Admin Portal</title>
+  <meta name="description" content="Master executive operations console for event marshals: live RSVPs, revenue analytics, guest list check-ins, and venue coordination.">
+  
+  <!-- Fonts & Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="page-dashboard-admin">
+
+  <!-- Application Layout Wrapper -->
+  <div class="dash-app-layout">
+    
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="dash-sidebar-overlay" id="dash-sidebar-overlay"></div>
+
+    <!-- ==========================================================================
+         DEDICATED LUXURY SIDEBAR NAVIGATION (ADMIN)
+         ========================================================================== -->
+    <aside class="dash-sidebar" id="dash-sidebar" aria-label="Admin Operations Sidebar">
+      
+      <!-- Brand Logo Header -->
+      <div class="dash-sidebar-header">
+        <a href="index.html" class="nav-brand" aria-label="Stackly Homepage">
+          <svg class="nav-brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="398 82 212 290" aria-label="Stackly Logo"><defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f6e27a"/><stop offset="50%" style="stop-color:#d4af37"/><stop offset="100%" style="stop-color:#aa771c"/></linearGradient></defs><path fill="url(#goldGrad)" d="M419.713867,256.179962 C408.001251,235.739304 410.215973,215.613876 419.889709,195.679504 C426.373138,182.319229 436.255493,171.444672 446.508270,160.904480 C457.075165,150.041229 468.783997,140.348602 478.792694,128.896606 C487.411407,119.035004 494.797852,108.464394 500.031921,96.425682 C500.738983,94.799370 501.001617,92.854477 502.785980,91.712807 C503.214905,91.838028 503.879059,91.821617 504.103485,92.127670 C514.526489,106.341171 522.003967,121.483376 518.287415,139.859406 C515.933533,151.498276 508.987885,160.308563 500.296600,167.942245 C487.788574,178.928223 473.634369,187.949692 462.046570,200.037262 C456.219025,206.116135 451.191589,212.659836 449.149933,221.054688 C445.376373,236.570572 454.272034,249.198563 470.197021,250.779221 C485.241028,252.272446 499.302216,248.880798 512.632202,241.996979 C514.021362,241.279602 515.213196,239.793518 517.062500,240.547546 C517.833252,242.063324 516.690857,242.794266 515.917847,243.562866 C502.480865,256.923462 487.519073,267.973206 468.591339,271.949402 C447.923096,276.291199 431.269562,272.383606 419.713867,256.179962Z"/><path fill="url(#goldGrad)" d="M536.351807,311.352905 C521.089722,325.623138 508.631836,341.451172 501.644409,361.304535 C500.580017,360.856842 499.799347,360.777496 499.458496,360.348633 C491.323975,350.113098 485.458466,338.909088 484.707672,325.531189 C484.034546,313.536499 489.236786,303.909576 496.947052,295.363251 C506.737030,284.511749 519.089050,276.702271 530.329102,267.573334 C539.676453,259.981689 548.930542,252.352356 553.649658,240.719803 C556.247925,234.315125 556.803040,227.722214 555.167542,221.122284 C551.964783,208.197189 539.399353,200.886032 526.174622,203.877502 C513.911682,206.651428 503.242737,212.702515 493.079834,219.823700 C492.039246,220.552856 491.267578,221.851700 489.661957,221.557190 C488.659760,220.289383 489.653076,219.345703 490.287292,218.480408 C503.850159,199.976334 521.506714,187.674316 544.321167,183.636948 C574.742554,178.253418 599.437622,199.883118 594.804749,234.346802 C592.539368,251.198425 583.628967,264.794067 572.581299,277.156372 C561.558105,289.491241 548.610413,299.803345 536.351807,311.352905Z"/></svg>
+          <div class="nav-brand-text">STACKLY<span>.</span></div>
+        </a>
+        <button type="button" class="dash-sidebar-close" id="dash-sidebar-close" aria-label="Close sidebar">✕</button>
+      </div>
+
+      <!-- Compact Marshal Identity Card -->
+      <div class="dash-sidebar-user">
+        <div class="dash-sidebar-user-avatar user-avatar-display" style="background: linear-gradient(135deg, #ff859b 0%, #ff4d6d 100%); color: #ffffff;">V</div>
+        <div class="dash-sidebar-user-meta">
+          <strong class="dash-sidebar-user-name user-name-display">Vikramaditya Roy</strong>
+          <span class="dash-sidebar-user-role" style="color: #ff9ebb;">✦ Chief Event Marshal</span>
+        </div>
+      </div>
+
+      <!-- Section: Main Operations Menu -->
+      <div class="dash-sidebar-group-label">OPERATIONS CONSOLE</div>
+      <nav class="dash-sidebar-nav" id="dash-admin-nav">
+        <button type="button" class="dash-sidebar-btn active" data-tab="admin-overview">
+          <div class="dash-sidebar-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+            <span>Master Overview</span>
+          </div>
+        </button>
+
+        <button type="button" class="dash-sidebar-btn" data-tab="admin-roster">
+          <div class="dash-sidebar-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            <span>Guest Roster</span>
+          </div>
+          <span class="dash-sidebar-badge" style="background: rgba(255, 77, 109, 0.18); border-color: rgba(255, 77, 109, 0.4); color: #ff9ebb;">6 Live</span>
+        </button>
+
+        <button type="button" class="dash-sidebar-btn" data-tab="admin-venues">
+          <div class="dash-sidebar-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Salem Venues</span>
+          </div>
+          <span class="dash-sidebar-badge">5 Hubs</span>
+        </button>
+
+        <button type="button" class="dash-sidebar-btn" data-tab="admin-tiers">
+          <div class="dash-sidebar-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            <span>Tier Quotas</span>
+          </div>
+        </button>
+
+        <button type="button" class="dash-sidebar-btn" data-tab="admin-concierge">
+          <div class="dash-sidebar-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <span>Host Inquiries</span>
+          </div>
+          <span class="dash-sidebar-badge" style="background: rgba(255, 149, 0, 0.2); color: #ff9500; border-color: rgba(255, 149, 0, 0.4);">3 New</span>
+        </button>
+
+        <button type="button" class="dash-sidebar-btn" data-tab="admin-reports">
+          <div class="dash-sidebar-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            <span>Financial Reports</span>
+          </div>
+        </button>
+      </nav>
+
+      <!-- Sidebar Bottom Shortcuts -->
+      <div class="dash-sidebar-footer">
+        <a href="dashboard-user.html" class="dash-sidebar-footer-link" title="Preview Client View">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"></circle><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path></svg>
+          <span>Switch to Client View</span>
+        </a>
+        <a href="index.html" class="dash-sidebar-footer-link" title="Return to Stackly Homepage">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Exit to Website</span>
+        </a>
+        <button type="button" class="dash-sidebar-footer-link btn-dash-logout" id="sidebar-logout-btn" title="Sign out of console">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          <span>Sign Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+         MAIN CONTENT AREA (TOP BAR + DYNAMIC TAB PANES)
+         ========================================================================== -->
+    <div class="dash-main-area">
+      
+      <!-- Top Responsive Bar -->
+      <header class="dash-top-bar">
+        <div class="dash-top-bar-left">
+          <button type="button" class="dash-sidebar-toggle" id="dash-sidebar-toggle" aria-label="Open operations menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="dash-view-title">
+            <span style="color: var(--color-text-secondary); font-size: 14px;">Marshal Console /</span>
+            <span class="active-crumb" id="dash-active-title">Master Overview</span>
+          </div>
+        </div>
+
+        <div class="dash-top-bar-actions">
+          <a href="dashboard-user.html" class="btn btn-secondary" style="min-height: 38px; padding: 6px 14px; font-size: 12px;">
+            <span>Client View</span>
+          </a>
+          <button type="button" class="btn-dash-action btn-dash-logout" id="global-logout-btn" title="Sign out of console">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+            <span>Logout</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Central Scrollable Container -->
+      <main class="dash-content-container">
+
+        <!-- ====================================================================
+             TAB 1: MASTER OVERVIEW
+             ==================================================================== -->
+        <section class="dash-tab-pane active" id="tab-admin-overview">
+          
+          <!-- Top Profile Welcome Card -->
+          <div class="dash-header-card">
+            <div class="dash-user-profile">
+              <div class="dash-avatar-circle user-avatar-display" style="background: linear-gradient(135deg, #ff859b 0%, #ff4d6d 100%); color: #ffffff;">V</div>
+              <div class="dash-profile-info">
+                <h1>Master Console: <span class="user-name-display">Vikramaditya Roy</span></h1>
+                <div class="dash-profile-meta">
+                  <span class="role-badge-pill role-badge-admin">✦ Chief Event Marshal</span>
+                  <span class="dash-profile-email user-email-display">admin@stackly.com</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-header-actions">
+              <button type="button" class="btn btn-primary btn-tab-trigger" data-target="admin-roster" style="min-height: 44px; padding: 10px 18px; font-size: 13px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                <span>Live Guest Roster</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 4 Executive Metrics -->
+          <div class="dash-metrics-grid">
+            <div class="metric-card">
+              <div class="metric-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div class="metric-label">Total Registrations</div>
+              <div class="metric-value">1,840</div>
+              <div class="metric-sub">+18% RSVP increase this month</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="18" y2="10"></line></svg>
+              </div>
+              <div class="metric-label">Live Celebrations</div>
+              <div class="metric-value">6 Active</div>
+              <div class="metric-sub">Weddings, Birthdays, Sangeet &amp; Cradle</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </div>
+              <div class="metric-label">Gross Revenue</div>
+              <div class="metric-value">₹148,500</div>
+              <div class="metric-sub">Verified deposits &amp; pass sales</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="metric-label">Venue Allocation</div>
+              <div class="metric-value">84% Cap.</div>
+              <div class="metric-sub">Salem Taj Vivanta &amp; Arena Hubs</div>
+            </div>
+          </div>
+
+          <!-- Milestone Distribution Progress & Live Alerts -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 30px;">
+            
+            <!-- Category Breakdown -->
+            <div style="background: linear-gradient(145deg, rgba(22, 22, 30, 0.9) 0%, rgba(12, 12, 16, 0.95) 100%); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-xl); padding: 28px;">
+              <h3 style="font-family: var(--font-heading); font-size: 19px; color: #ffffff; margin-bottom: 20px;">Milestone RSVPs Breakdown</h3>
+              
+              <div style="margin-bottom: 16px;">
+                <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px;">
+                  <span style="color: #ffffff;">Royal Weddings &amp; Receptions</span>
+                  <strong style="color: var(--color-accent-gold-light);">42% (772 Guests)</strong>
+                </div>
+                <div class="venue-bar-track"><div class="venue-bar-fill" style="width: 42%;"></div></div>
+              </div>
+
+              <div style="margin-bottom: 16px;">
+                <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px;">
+                  <span style="color: #ffffff;">Grand Milestone Birthdays</span>
+                  <strong style="color: var(--color-accent-gold-light);">26% (478 Guests)</strong>
+                </div>
+                <div class="venue-bar-track"><div class="venue-bar-fill" style="width: 26%;"></div></div>
+              </div>
+
+              <div style="margin-bottom: 16px;">
+                <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px;">
+                  <span style="color: #ffffff;">Sangeet &amp; DJ Dance Nights</span>
+                  <strong style="color: var(--color-accent-gold-light);">20% (368 Guests)</strong>
+                </div>
+                <div class="venue-bar-track"><div class="venue-bar-fill" style="width: 20%;"></div></div>
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px;">
+                  <span style="color: #ffffff;">Baby Naming &amp; Cradle Ceremonies</span>
+                  <strong style="color: var(--color-accent-gold-light);">12% (222 Guests)</strong>
+                </div>
+                <div class="venue-bar-track"><div class="venue-bar-fill" style="width: 12%;"></div></div>
+              </div>
+            </div>
+
+            <!-- Operations Urgent Feed -->
+            <div style="background: linear-gradient(145deg, rgba(22, 22, 30, 0.9) 0%, rgba(12, 12, 16, 0.95) 100%); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-xl); padding: 28px;">
+              <h3 style="font-family: var(--font-heading); font-size: 19px; color: #ffffff; margin-bottom: 20px;">Live Marshal Dispatches</h3>
+              
+              <div style="display: flex; flex-direction: column; gap: 14px;">
+                <div style="padding: 12px 14px; background: rgba(10, 10, 14, 0.6); border-left: 3px solid #4cd964; border-radius: 6px;">
+                  <strong style="color: #ffffff; font-size: 13px;">Taj Vivanta Lotus Mandap Load-In: On Schedule</strong>
+                  <div style="font-size: 12px; color: var(--color-text-secondary); margin-top: 2px;">Floral team cleared security gate; sound rehearsal starts at 17:00.</div>
+                </div>
+
+                <div style="padding: 12px 14px; background: rgba(10, 10, 14, 0.6); border-left: 3px solid #ff9500; border-radius: 6px;">
+                  <strong style="color: #ffffff; font-size: 13px;">Stackly Arena Sangeet Night: 96% Capacity Reached</strong>
+                  <div style="font-size: 12px; color: var(--color-text-secondary); margin-top: 2px;">Only 2 couple passes remaining in Tier 2 quota.</div>
+                </div>
+
+                <div style="padding: 12px 14px; background: rgba(10, 10, 14, 0.6); border-left: 3px solid var(--color-accent-gold); border-radius: 6px;">
+                  <strong style="color: #ffffff; font-size: 13px;">New Concierge Diet Request Transmitted</strong>
+                  <div style="font-size: 12px; color: var(--color-text-secondary); margin-top: 2px;">Host Ananya Sharma requested Jain silver-service banquet adjustment.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 2: GUEST ROSTER
+             ==================================================================== -->
+        <section class="dash-tab-pane" id="tab-admin-roster">
+          <div class="dash-section-header">
+            <div>
+              <h2 class="dash-section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-gold);"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                Live Celebration Registrations Roster
+              </h2>
+              <span style="font-size: 13px; color: var(--color-text-secondary);">Real-time guest list, gate check-in status, and pass verification console</span>
+            </div>
+          </div>
+
+          <!-- Table Filter and Search Controls -->
+          <div class="admin-table-controls">
+            <div class="admin-search-wrapper">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-gold);"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" id="admin-search-input" class="admin-search-input" placeholder="Search by guest, pass ID, venue or milestone...">
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+              <select id="admin-filter-category" class="admin-filter-select" aria-label="Filter by milestone category">
+                <option value="all" selected>All Milestones (6)</option>
+                <option value="wedding">Royal Weddings</option>
+                <option value="birthday">Milestone Birthdays</option>
+                <option value="dance">Dancing &amp; Sangeet</option>
+                <option value="baby-naming">Baby Naming Ceremonies</option>
+              </select>
+
+              <button type="button" class="btn btn-primary" id="btn-export-csv" style="min-height: 38px; padding: 6px 16px; font-size: 12px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Export CSV
+              </button>
+            </div>
+          </div>
+
+          <!-- Data Table Card -->
+          <div class="admin-table-card">
+            <div class="table-responsive">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Pass ID</th>
+                    <th>Guest / Host</th>
+                    <th>Celebration &amp; Venue</th>
+                    <th>Date &amp; Schedule</th>
+                    <th>Amount &amp; Guests</th>
+                    <th>Gate Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-bookings-tbody">
+                  <!-- Dynamically populated by js/dashboard.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 3: SALEM VENUES & CAPACITY
+             ==================================================================== -->
+        <section class="dash-tab-pane" id="tab-admin-venues">
+          <div class="dash-section-header">
+            <div>
+              <h2 class="dash-section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-gold);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Salem Venues &amp; Floor Capacity Tracker
+              </h2>
+              <span style="font-size: 13px; color: var(--color-text-secondary);">Real-time floor occupancy, facility allocations, and venue lead marshals</span>
+            </div>
+          </div>
+
+          <div class="venue-cards-grid">
+            
+            <div class="venue-status-card" data-animate="fade-up">
+              <div class="venue-header-row">
+                <h3 class="venue-name">Taj Vivanta Palace</h3>
+                <span class="venue-occupancy-badge high">92% Occupancy</span>
+              </div>
+              <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 8px;">Royal Grand Mandap, Crystal Ballroom &amp; Lawn</p>
+              <div class="venue-bar-track"><div class="venue-bar-fill" style="width: 92%;"></div></div>
+              <div class="venue-stat-row">
+                <span>Capacity: 850 Guests</span>
+                <strong style="color: #ffffff;">782 Confirmed RSVPs</strong>
+              </div>
+              <div class="venue-manager-row">
+                <span>Lead Marshal: Suresh Nair</span>
+                <a href="tel:+919876543210" style="color: var(--color-accent-gold-light); text-decoration: none;">+91 98765 43210</a>
+              </div>
+            </div>
+
+            <div class="venue-status-card" data-animate="fade-up">
+              <div class="venue-header-row">
+                <h3 class="venue-name">Stackly Arena Grand Ballroom</h3>
+                <span class="venue-occupancy-badge">78% Occupancy</span>
+              </div>
+              <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 8px;">Acoustic Concert Stage &amp; Sangeet Dance Floor</p>
+              <div class="venue-bar-track"><div class="venue-bar-fill" style="width: 78%;"></div></div>
+              <div class="venue-stat-row">
+                <span>Capacity: 1,200 Guests</span>
+                <strong style="color: #ffffff;">936 Confirmed RSVPs</strong>
+              </div>
+              <div class="venue-manager-row">
+                <span>Lead Marshal: Kavita Raman</span>
+                <a href="tel:+919876543210" style="color: var(--color-accent-gold-light); text-decoration: none;">+91 98765 43210</a>
+              </div>
+            </div>
+
+            <div class="venue-status-card" data-animate="fade-up">
+              <div class="venue-header-row">
+                <h3 class="venue-name">Skyline Terrace Club</h3>
+                <span class="venue-occupancy-badge high">85% Occupancy</span>
+              </div>
+              <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 8px;">Panoramic Salem Mountain View &amp; Rooftop Pool</p>
+              <div class="venue-bar-track"><div class="venue-bar-fill" style="width: 85%;"></div></div>
+              <div class="venue-stat-row">
+                <span>Capacity: 400 Guests</span>
+                <strong style="color: #ffffff;">340 Confirmed RSVPs</strong>
+              </div>
+              <div class="venue-manager-row">
+                <span>Lead Marshal: Arvind Swamy</span>
+                <a href="tel:+919876543210" style="color: var(--color-accent-gold-light); text-decoration: none;">+91 98765 43210</a>
+              </div>
+            </div>
+
+            <div class="venue-status-card" data-animate="fade-up">
+              <div class="venue-header-row">
+                <h3 class="venue-name">Heritage Orchid Gardens</h3>
+                <span class="venue-occupancy-badge">70% Occupancy</span>
+              </div>
+              <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 8px;">Chinna Tirupathi, Salem &bull; Sacred Vedic Pavilions</p>
+              <div class="venue-bar-track"><div class="venue-bar-fill" style="width: 70%;"></div></div>
+              <div class="venue-stat-row">
+                <span>Capacity: 600 Guests</span>
+                <strong style="color: #ffffff;">420 Confirmed RSVPs</strong>
+              </div>
+              <div class="venue-manager-row">
+                <span>Lead Marshal: Meera Krishnan</span>
+                <a href="tel:+919876543210" style="color: var(--color-accent-gold-light); text-decoration: none;">+91 98765 43210</a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 4: TIER QUOTAS
+             ==================================================================== -->
+        <section class="dash-tab-pane" id="tab-admin-tiers">
+          <div class="dash-section-header">
+            <div>
+              <h2 class="dash-section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-gold);"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                Celebration Packages &amp; Ticket Tier Allocations
+              </h2>
+              <span style="font-size: 13px; color: var(--color-text-secondary);">Manage inventory limits, ticket pricing tiers, and capacity quotas</span>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px;">
+            
+            <div style="background: rgba(22, 22, 30, 0.85); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-md); padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span class="pass-category-pill">ROYAL WEDDING</span>
+                <strong style="color: var(--color-accent-gold-light); font-size: 18px;">₹1,000</strong>
+              </div>
+              <h4 style="font-family: var(--font-heading); font-size: 17px; color: #ffffff; margin-bottom: 8px;">VIP Gold Palace Suite</h4>
+              <div style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 14px;">Allocated Quota: 25 Suites &bull; Sold: 24</div>
+              <div class="venue-bar-track"><div class="venue-bar-fill" style="width: 96%;"></div></div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                <span style="font-size: 12px; color: #ff9500;">Only 1 Left</span>
+                <button type="button" class="btn btn-secondary" style="min-height: 32px; padding: 4px 12px; font-size: 11.5px;">Adjust Quota</button>
+              </div>
+            </div>
+
+            <div style="background: rgba(22, 22, 30, 0.85); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-md); padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span class="pass-category-pill">SANGEET DANCE</span>
+                <strong style="color: var(--color-accent-gold-light); font-size: 18px;">₹300</strong>
+              </div>
+              <h4 style="font-family: var(--font-heading); font-size: 17px; color: #ffffff; margin-bottom: 8px;">Couple Dance Pass</h4>
+              <div style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 14px;">Allocated Quota: 60 Couples &bull; Sold: 58</div>
+              <div class="venue-bar-track"><div class="venue-bar-fill" style="width: 96.6%;"></div></div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                <span style="font-size: 12px; color: #ff9500;">2 Couples Left</span>
+                <button type="button" class="btn btn-secondary" style="min-height: 32px; padding: 4px 12px; font-size: 11.5px;">Adjust Quota</button>
+              </div>
+            </div>
+
+            <div style="background: rgba(22, 22, 30, 0.85); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-md); padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span class="pass-category-pill">BIRTHDAY GALA</span>
+                <strong style="color: var(--color-accent-gold-light); font-size: 18px;">₹720</strong>
+              </div>
+              <h4 style="font-family: var(--font-heading); font-size: 17px; color: #ffffff; margin-bottom: 8px;">VIP Skyline Lounge</h4>
+              <div style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 14px;">Allocated Quota: 20 Lounges &bull; Sold: 18</div>
+              <div class="venue-bar-track"><div class="venue-bar-fill" style="width: 90%;"></div></div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                <span style="font-size: 12px; color: #4cd964;">Available</span>
+                <button type="button" class="btn btn-secondary" style="min-height: 32px; padding: 4px 12px; font-size: 11.5px;">Adjust Quota</button>
+              </div>
+            </div>
+
+            <div style="background: rgba(22, 22, 30, 0.85); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-md); padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span class="pass-category-pill">BABY NAMING</span>
+                <strong style="color: var(--color-accent-gold-light); font-size: 18px;">₹1,140</strong>
+              </div>
+              <h4 style="font-family: var(--font-heading); font-size: 17px; color: #ffffff; margin-bottom: 8px;">Sacred Family Cradle Suite</h4>
+              <div style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 14px;">Allocated Quota: 12 Suites &bull; Sold: 10</div>
+              <div class="venue-bar-track"><div class="venue-bar-fill" style="width: 83%;"></div></div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+                <span style="font-size: 12px; color: #4cd964;">Available</span>
+                <button type="button" class="btn btn-secondary" style="min-height: 32px; padding: 4px 12px; font-size: 11.5px;">Adjust Quota</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 5: CONCIERGE QUEUE
+             ==================================================================== -->
+        <section class="dash-tab-pane" id="tab-admin-concierge">
+          <div class="dash-section-header">
+            <div>
+              <h2 class="dash-section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-gold);"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                Host Special Requests &amp; Concierge Queue
+              </h2>
+              <span style="font-size: 13px; color: var(--color-text-secondary);">Direct inquiries submitted from Client Celebration Portals across Salem venues</span>
+            </div>
+          </div>
+
+          <div class="admin-table-card">
+            <div class="table-responsive">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Host Name</th>
+                    <th>Celebration</th>
+                    <th>Special Request</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Ananya Sharma</strong><br><small style="color: var(--color-text-secondary);">client@stackly.com</small></td>
+                    <td>Royal Grand Palace Wedding</td>
+                    <td>Jain table for 14 guests with special sattvic menu</td>
+                    <td><span class="pass-category-pill">Catering</span></td>
+                    <td><span class="pass-status-pill status-confirmed">✓ Assigned Chef</span></td>
+                    <td><button type="button" class="btn btn-secondary" style="min-height: 30px; padding: 2px 10px; font-size: 11px;">Update</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Rohan Mehra</strong><br><small style="color: var(--color-text-secondary);">rohan.m@gmail.com</small></td>
+                    <td>Neon Carnival Birthday</td>
+                    <td>Extra dual subwoofer monitors for guest DJ set</td>
+                    <td><span class="pass-category-pill">A/V Sound</span></td>
+                    <td><span class="pass-status-pill" style="background: rgba(255, 149, 0, 0.2); color: #ff9500;">Pending Review</span></td>
+                    <td><button type="button" class="btn btn-primary" style="min-height: 30px; padding: 2px 10px; font-size: 11px;">Approve</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Karthik &amp; Deepa</strong><br><small style="color: var(--color-text-secondary);">karthik.d@outlook.com</small></td>
+                    <td>Traditional Namakaran Cradle</td>
+                    <td>Fresh Jasmine floral cradle garlands imported from Madurai</td>
+                    <td><span class="pass-category-pill">Decor</span></td>
+                    <td><span class="pass-status-pill status-confirmed">✓ Sourced</span></td>
+                    <td><button type="button" class="btn btn-secondary" style="min-height: 30px; padding: 2px 10px; font-size: 11px;">Update</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             TAB 6: FINANCIAL REPORTS
+             ==================================================================== -->
+        <section class="dash-tab-pane" id="tab-admin-reports">
+          <div class="dash-section-header">
+            <div>
+              <h2 class="dash-section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-gold);"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                Financial Audit &amp; Settlement Reports
+              </h2>
+              <span style="font-size: 13px; color: var(--color-text-secondary);">Monthly revenue breakdown, gateway settlements, and pass disbursement logs</span>
+            </div>
+            <button type="button" class="btn btn-primary" id="btn-export-audit" style="min-height: 38px; padding: 6px 16px; font-size: 12px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download Full Audit (CSV)
+            </button>
+          </div>
+
+          <div class="admin-table-card" style="margin-top: 20px;">
+            <div class="table-responsive">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Milestone Category</th>
+                    <th>Bookings Count</th>
+                    <th>Gross Pass Sales</th>
+                    <th>Platform Service Fee</th>
+                    <th>Salem Venue Share</th>
+                    <th>Settlement Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Royal Weddings &amp; Receptions</strong></td>
+                    <td>772 Guests (24 Suites)</td>
+                    <td style="color: var(--color-accent-gold-light); font-weight: 700;">₹62,400</td>
+                    <td>₹6,240 (10%)</td>
+                    <td>₹56,160</td>
+                    <td><span class="pass-status-pill status-confirmed">✓ Disbursed</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Grand Milestone Birthdays</strong></td>
+                    <td>478 Guests (18 Lounges)</td>
+                    <td style="color: var(--color-accent-gold-light); font-weight: 700;">₹34,200</td>
+                    <td>₹3,420 (10%)</td>
+                    <td>₹30,780</td>
+                    <td><span class="pass-status-pill status-confirmed">✓ Disbursed</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sangeet &amp; DJ Dance Nights</strong></td>
+                    <td>368 Guests (58 Passes)</td>
+                    <td style="color: var(--color-accent-gold-light); font-weight: 700;">₹28,900</td>
+                    <td>₹2,890 (10%)</td>
+                    <td>₹26,010</td>
+                    <td><span class="pass-status-pill status-confirmed">✓ Disbursed</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Baby Naming Ceremonies</strong></td>
+                    <td>222 Guests (10 Suites)</td>
+                    <td style="color: var(--color-accent-gold-light); font-weight: 700;">₹23,000</td>
+                    <td>₹2,300 (10%)</td>
+                    <td>₹20,700</td>
+                    <td><span class="pass-status-pill" style="background: rgba(255, 149, 0, 0.2); color: #ff9500;">Pending Bank Wire</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Dedicated Minimal Footer -->
+      <footer class="dash-footer">
+        <div class="dash-footer-inner">
+          <div class="dash-footer-brand">
+            <span style="font-weight: 800; color: #ffffff; letter-spacing: 0.06em;">STACKLY OPERATIONS CONSOLE</span>
+            <span style="margin: 0 8px; color: var(--color-accent-gold);">&bull;</span>
+            <span>Salem Regional Command &bull; Chinna Tirupathi, Salem</span>
+          </div>
+          <div class="dash-footer-copy">
+            &copy; 2026 Stackly Events &amp; Celebration Planners. Master Admin Console.
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celebration Directory - Stackly Luxury Events</title>
+  <meta name="description" content="Explore and book passes for Royal Weddings, Grand Birthdays, Dance & Sangeet Nights, and Traditional Baby Naming Ceremonies.">
+
+  <!-- Stylesheets (PRD Compliant) -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/loader.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/events.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       PRD LOADER PAGE (PAGES 4-15 COMPLIANT - BLACK & GOLD)
+       ========================================================================== -->
+  <div id="page-loader" class="loader-container" role="status" aria-live="polite">
+    <div class="loader-logo-wrapper">
+      <svg class="loader-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="398 82 212 290" aria-label="Stackly Logo">
+        <defs>
+          <linearGradient id="loaderGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#f6e27a"/>
+            <stop offset="50%" style="stop-color:#d4af37"/>
+            <stop offset="100%" style="stop-color:#aa771c"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#loaderGoldGrad)" d="M419.713867,256.179962 C408.001251,235.739304 410.215973,215.613876 419.889709,195.679504 C426.373138,182.319229 436.255493,171.444672 446.508270,160.904480 C457.075165,150.041229 468.783997,140.348602 478.792694,128.896606 C487.411407,119.035004 494.797852,108.464394 500.031921,96.425682 C500.738983,94.799370 501.001617,92.854477 502.785980,91.712807 C503.214905,91.838028 503.879059,91.821617 504.103485,92.127670 C514.526489,106.341171 522.003967,121.483376 518.287415,139.859406 C515.933533,151.498276 508.987885,160.308563 500.296600,167.942245 C487.788574,178.928223 473.634369,187.949692 462.046570,200.037262 C456.219025,206.116135 451.191589,212.659836 449.149933,221.054688 C445.376373,236.570572 454.272034,249.198563 470.197021,250.779221 C485.241028,252.272446 499.302216,248.880798 512.632202,241.996979 C514.021362,241.279602 515.213196,239.793518 517.062500,240.547546 C517.833252,242.063324 516.690857,242.794266 515.917847,243.562866 C502.480865,256.923462 487.519073,267.973206 468.591339,271.949402 C447.923096,276.291199 431.269562,272.383606 419.713867,256.179962Z"/>
+        <path fill="url(#loaderGoldGrad)" d="M536.351807,311.352905 C521.089722,325.623138 508.631836,341.451172 501.644409,361.304535 C500.580017,360.856842 499.799347,360.777496 499.458496,360.348633 C491.323975,350.113098 485.458466,338.909088 484.707672,325.531189 C484.034546,313.536499 489.236786,303.909576 496.947052,295.363251 C506.737030,284.511749 519.089050,276.702271 530.329102,267.573334 C539.676453,259.981689 548.930542,252.352356 553.649658,240.719803 C556.247925,234.315125 556.803040,227.722214 555.167542,221.122284 C551.964783,208.197189 539.399353,200.886032 526.174622,203.877502 C513.911682,206.651428 503.242737,212.702515 493.079834,219.823700 C492.039246,220.552856 491.267578,221.851700 489.661957,221.557190 C488.659760,220.289383 489.653076,219.345703 490.287292,218.480408 C503.850159,199.976334 521.506714,187.674316 544.321167,183.636948 C574.742554,178.253418 599.437622,199.883118 594.804749,234.346802 C592.539368,251.198425 583.628967,264.794067 572.581299,277.156372 C561.558105,289.491241 548.610413,299.803345 536.351807,311.352905Z"/>
+      </svg>
+      <div class="loader-brand-title">STACKLY<span>.</span></div>
+    </div>
+    <div class="loader-spinner-wrapper">
+      <div class="loader-spinner"></div>
+    </div>
+    <div class="loader-text">Loading Celebrations...</div>
+    <div class="loader-subtext" id="loader-status">FETCHING ROYAL CELEBRATION DIRECTORY...</div>
+  </div>
+
+  <!-- ==========================================================================
+       100% FULL-WIDTH NAVBAR (PRD PAGES 15-17 COMPLIANT)
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="navbar-container">
+      <a href="index.html" class="nav-brand" aria-label="Stackly Homepage">
+        <svg class="nav-brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="398 82 212 290" aria-label="Stackly Logo"><defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f6e27a"/><stop offset="50%" style="stop-color:#d4af37"/><stop offset="100%" style="stop-color:#aa771c"/></linearGradient></defs><path fill="url(#goldGrad)" d="M419.713867,256.179962 C408.001251,235.739304 410.215973,215.613876 419.889709,195.679504 C426.373138,182.319229 436.255493,171.444672 446.508270,160.904480 C457.075165,150.041229 468.783997,140.348602 478.792694,128.896606 C487.411407,119.035004 494.797852,108.464394 500.031921,96.425682 C500.738983,94.799370 501.001617,92.854477 502.785980,91.712807 C503.214905,91.838028 503.879059,91.821617 504.103485,92.127670 C514.526489,106.341171 522.003967,121.483376 518.287415,139.859406 C515.933533,151.498276 508.987885,160.308563 500.296600,167.942245 C487.788574,178.928223 473.634369,187.949692 462.046570,200.037262 C456.219025,206.116135 451.191589,212.659836 449.149933,221.054688 C445.376373,236.570572 454.272034,249.198563 470.197021,250.779221 C485.241028,252.272446 499.302216,248.880798 512.632202,241.996979 C514.021362,241.279602 515.213196,239.793518 517.062500,240.547546 C517.833252,242.063324 516.690857,242.794266 515.917847,243.562866 C502.480865,256.923462 487.519073,267.973206 468.591339,271.949402 C447.923096,276.291199 431.269562,272.383606 419.713867,256.179962Z"/><path fill="url(#goldGrad)" d="M536.351807,311.352905 C521.089722,325.623138 508.631836,341.451172 501.644409,361.304535 C500.580017,360.856842 499.799347,360.777496 499.458496,360.348633 C491.323975,350.113098 485.458466,338.909088 484.707672,325.531189 C484.034546,313.536499 489.236786,303.909576 496.947052,295.363251 C506.737030,284.511749 519.089050,276.702271 530.329102,267.573334 C539.676453,259.981689 548.930542,252.352356 553.649658,240.719803 C556.247925,234.315125 556.803040,227.722214 555.167542,221.122284 C551.964783,208.197189 539.399353,200.886032 526.174622,203.877502 C513.911682,206.651428 503.242737,212.702515 493.079834,219.823700 C492.039246,220.552856 491.267578,221.851700 489.661957,221.557190 C488.659760,220.289383 489.653076,219.345703 490.287292,218.480408 C503.850159,199.976334 521.506714,187.674316 544.321167,183.636948 C574.742554,178.253418 599.437622,199.883118 594.804749,234.346802 C592.539368,251.198425 583.628967,264.794067 572.581299,277.156372 C561.558105,289.491241 548.610413,299.803345 536.351807,311.352905Z"/></svg>
+        <div class="nav-brand-text">STACKLY<span>.</span></div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item">
+            <a href="events.html" class="nav-link active">
+              Celebrations <span class="dropdown-indicator">▼</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="events.html?filter=wedding">Royal Weddings</a></li>
+              <li class="dropdown-item"><a href="events.html?filter=birthday">Grand Birthdays</a></li>
+              <li class="dropdown-item"><a href="events.html?filter=dance">Sangeet &amp; Dance Nights</a></li>
+              <li class="dropdown-item"><a href="events.html?filter=baby-naming">Baby Naming Ceremonies</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Journal</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="events.html" class="btn-book">Book Celebration</a>
+        <a href="login.html" class="btn-login">Login</a>
+      </div>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Open mobile menu">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER (PRD IMAGE 1 COMPLIANT) -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <div class="nav-brand">
+        <svg class="nav-brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="398 82 212 290" aria-label="Stackly Logo"><defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f6e27a"/><stop offset="50%" style="stop-color:#d4af37"/><stop offset="100%" style="stop-color:#aa771c"/></linearGradient></defs><path fill="url(#goldGrad)" d="M419.713867,256.179962 C408.001251,235.739304 410.215973,215.613876 419.889709,195.679504 C426.373138,182.319229 436.255493,171.444672 446.508270,160.904480 C457.075165,150.041229 468.783997,140.348602 478.792694,128.896606 C487.411407,119.035004 494.797852,108.464394 500.031921,96.425682 C500.738983,94.799370 501.001617,92.854477 502.785980,91.712807 C503.214905,91.838028 503.879059,91.821617 504.103485,92.127670 C514.526489,106.341171 522.003967,121.483376 518.287415,139.859406 C515.933533,151.498276 508.987885,160.308563 500.296600,167.942245 C487.788574,178.928223 473.634369,187.949692 462.046570,200.037262 C456.219025,206.116135 451.191589,212.659836 449.149933,221.054688 C445.376373,236.570572 454.272034,249.198563 470.197021,250.779221 C485.241028,252.272446 499.302216,248.880798 512.632202,241.996979 C514.021362,241.279602 515.213196,239.793518 517.062500,240.547546 C517.833252,242.063324 516.690857,242.794266 515.917847,243.562866 C502.480865,256.923462 487.519073,267.973206 468.591339,271.949402 C447.923096,276.291199 431.269562,272.383606 419.713867,256.179962Z"/><path fill="url(#goldGrad)" d="M536.351807,311.352905 C521.089722,325.623138 508.631836,341.451172 501.644409,361.304535 C500.580017,360.856842 499.799347,360.777496 499.458496,360.348633 C491.323975,350.113098 485.458466,338.909088 484.707672,325.531189 C484.034546,313.536499 489.236786,303.909576 496.947052,295.363251 C506.737030,284.511749 519.089050,276.702271 530.329102,267.573334 C539.676453,259.981689 548.930542,252.352356 553.649658,240.719803 C556.247925,234.315125 556.803040,227.722214 555.167542,221.122284 C551.964783,208.197189 539.399353,200.886032 526.174622,203.877502 C513.911682,206.651428 503.242737,212.702515 493.079834,219.823700 C492.039246,220.552856 491.267578,221.851700 489.661957,221.557190 C488.659760,220.289383 489.653076,219.345703 490.287292,218.480408 C503.850159,199.976334 521.506714,187.674316 544.321167,183.636948 C574.742554,178.253418 599.437622,199.883118 594.804749,234.346802 C592.539368,251.198425 583.628967,264.794067 572.581299,277.156372 C561.558105,289.491241 548.610413,299.803345 536.351807,311.352905Z"/></svg>
+        <div class="nav-brand-text" style="font-size: 20px;">STACKLY<span>.</span></div>
+      </div>
+      <button class="drawer-close-btn" id="drawer-close-btn">✕</button>
+    </div>
+
+    <div class="drawer-search-box">
+      <div class="drawer-search-title">Search Now!</div>
+      <form class="drawer-search-form" id="drawer-search-form">
+        <input type="text" class="drawer-search-input" placeholder="Search here..." required>
+        <button type="submit" class="drawer-search-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </form>
+    </div>
+
+    <ul class="drawer-nav">
+      <li class="drawer-nav-item"><a href="index.html" class="drawer-nav-link">Home</a></li>
+      <li class="drawer-nav-item"><a href="events.html" class="drawer-nav-link active">Celebrations</a></li>
+      <li class="drawer-nav-item"><a href="about.html" class="drawer-nav-link">About Us</a></li>
+      <li class="drawer-nav-item"><a href="team.html" class="drawer-nav-link">Our Team</a></li>
+      <li class="drawer-nav-item"><a href="blog.html" class="drawer-nav-link">Celebration Journal</a></li>
+      <li class="drawer-nav-item"><a href="index.html#packages-section" class="drawer-nav-link">Packages</a></li>
+      <li class="drawer-nav-item"><a href="contact.html" class="drawer-nav-link">Contact</a></li>
+    </ul>
+
+        <!-- PRD Mobile Drawer: Login & Action Buttons -->
+    <div class="drawer-actions">
+      <a href="login.html" class="btn-login drawer-btn-login">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+        <span>Login</span>
+      </a>
+      <a href="events.html" class="btn-book drawer-btn-book">Book Celebration</a>
+      <button class="drawer-logout-btn btn-dash-logout" style="display: none;" aria-label="Log out of account">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        <span>Log Out</span>
+      </button>
+    </div>
+
+<div class="drawer-contact-card">
+      <div class="drawer-contact-title">Contact Info</div>
+      <div class="drawer-contact-item">
+        <span class="drawer-contact-label">Phone</span>
+        <a href="tel:+919876543210">+91 9876543210</a>
+      </div>
+      <div class="drawer-contact-item">
+        <span class="drawer-contact-label">Email</span>
+        <a href="mailto:support@thestackly.com">support@thestackly.com</a>
+      </div>
+      <div class="drawer-contact-item">
+        <span class="drawer-contact-label">Location</span>
+        <span>Stackly, Salem</span>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 1: HERO BANNER & CELEBRATION BREADCRUMB
+         ========================================================================== -->
+    <section class="events-hero-wrapper" data-animate="fade" data-duration="1000">
+      <div class="container">
+        <div class="events-hero-content">
+          <div class="events-live-counter-pill">
+            <span class="live-dot"></span>
+            <span>6 LIVE MILESTONE CELEBRATIONS READY FOR BOOKING</span>
+          </div>
+          <span class="section-badge">ROYAL CELEBRATION DIRECTORY</span>
+          <h1 class="section-title" style="font-size: 48px; margin-bottom: 16px;">Discover &amp; Reserve <span class="gold-text">Milestone Events</span></h1>
+          <p class="section-subtitle" style="margin: 0 auto 26px; max-width: 680px;">
+            Secure verified passes for royal palace weddings, milestone birthdays, high-energy Sangeet dance parties, and sacred cradle ceremonies.
+          </p>
+          <div class="breadcrumb-nav">
+            <a href="index.html">Home</a>
+            <span class="breadcrumb-separator">&gt;</span>
+            <span class="breadcrumb-current">Celebrations Directory</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2: CATEGORY FILTER & LIVE SEARCH TOOLBAR (STICKY RIBBON)
+         ========================================================================== -->
+    <section class="celebration-ribbon-bar" data-animate="fade-up" data-delay="200">
+      <div class="container">
+        <div class="ribbon-flex">
+          <div class="events-filters">
+            <button class="filter-pill active" data-filter="all">All Celebrations</button>
+            <button class="filter-pill" data-filter="wedding">Royal Weddings</button>
+            <button class="filter-pill" data-filter="birthday">Milestone Birthdays</button>
+            <button class="filter-pill" data-filter="dance">Dancing &amp; Sangeet</button>
+            <button class="filter-pill" data-filter="baby-naming">Baby Naming Ceremonies</button>
+          </div>
+
+          <div style="display: flex; align-items: center; background: rgba(10, 10, 12, 0.9); border: 1px solid var(--color-border-gold); border-radius: var(--radius-sm); padding: 4px 12px; width: 100%; max-width: 340px;">
+            <input type="text" id="live-filter-search" placeholder="Search celebration, venue or date..." style="background: transparent; border: none; padding: 8px 10px; color: #ffffff; font-size: 14px; outline: none; width: 100%;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--color-accent-gold); flex-shrink: 0;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3: DETAILED CELEBRATION LISTINGS GRID
+         ========================================================================== -->
+    <section class="section" data-animate="fade-up" data-duration="800" style="padding: 70px 24px 90px;">
+      <div class="container">
+        <div class="events-grid" data-stagger id="events-grid-container">
+          <!-- Populated dynamically via events.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4: EXCLUSIVE VENUES & EXPERIENCES SHOWCASE (ASYMMETRICAL LAYOUT)
+         ========================================================================== -->
+    <section class="section section-alt" data-animate="fade-up" data-duration="800" style="padding: 85px 24px;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 20px;">
+          <span class="section-badge">ROYAL DESTINATIONS</span>
+          <h2 class="section-title">Curated Palatial Venues &amp; <span class="gold-text">Atmospheres</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto; max-width: 650px;">
+            Select from our verified portfolio of heritage palaces, sunset coastline pavilions, and state-of-the-art acoustic concert arenas.
+          </p>
+        </div>
+
+        <div class="venues-asymmetric-grid">
+          <!-- 1 Large Featured Showcase Card: Taj Vivanta Palace -->
+          <div class="venue-featured-card">
+            <img src="assets/img-1545232979-fbf68fe9b1af.webp" alt="Taj Vivanta Palace" class="venue-bg-image">
+            <div class="venue-overlay"></div>
+            <div class="venue-details">
+              <span class="venue-badge-pill">Palatial Heritage Flagship</span>
+              <h3 style="font-size: 32px; font-weight: 800; color: #ffffff; margin-bottom: 12px; font-family: var(--font-heading);">Taj Vivanta Palace</h3>
+              <p style="font-size: 15px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 20px; max-width: 520px;">
+                Grand regal arches, royal courtyards, and crystal chandeliers accommodating up to 1,200 guests with heritage culinary suites and royal bridal pavilions.
+              </p>
+              <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
+                <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--color-accent-gold-light);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Salem, Tamil Nadu
+                </span>
+                <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--color-accent-gold-light);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> 1,200 Capacity
+                </span>
+                <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--color-accent-gold-light);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path></svg> Royal Suite Included
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 Stacked Boutique Venue Cards -->
+          <div class="venue-stacked-cards">
+            <div class="venue-compact-card">
+              <div class="venue-compact-thumb">
+                <img src="assets/img-1507525428034-b723cf961d3e.webp" alt="Golden Sands Resort">
+              </div>
+              <div class="venue-compact-body">
+                <span class="venue-badge-pill">Beachfront &amp; Sundown</span>
+                <h4>Golden Sands Resort</h4>
+                <p style="font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; margin-bottom: 12px;">
+                  Panoramic sunset ocean vistas, barefoot beachfront mandaps, and breezy open-air gazebos.
+                </p>
+                <div style="display: flex; gap: 12px; font-size: 12px; font-weight: 700; color: var(--color-accent-gold-light);">
+                  <span style="display: inline-flex; align-items: center; gap: 4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Bay Coastline</span>
+                  <span>•</span>
+                  <span style="display: inline-flex; align-items: center; gap: 4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg> 600 Guests</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="venue-compact-card">
+              <div class="venue-compact-thumb">
+                <img src="assets/img-1517245386807-bb43f82c33c4.webp" alt="Skyline High-Energy Club">
+              </div>
+              <div class="venue-compact-body">
+                <span class="venue-badge-pill">DJ Nights &amp; Sangeet</span>
+                <h4>Skyline High-Energy Club</h4>
+                <p style="font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; margin-bottom: 12px;">
+                  State-of-the-art D&amp;B audiophile sound, 3D moving lasers, and luxury mezzanine VIP booths.
+                </p>
+                <div style="display: flex; gap: 12px; font-size: 12px; font-weight: 700; color: var(--color-accent-gold-light);">
+                  <span style="display: inline-flex; align-items: center; gap: 4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Salem Center</span>
+                  <span>•</span>
+                  <span style="display: inline-flex; align-items: center; gap: 4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg> 450 Guests</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5: VIP CUSTOM EVENT CONCIERGE & BOOKING CTA
+         ========================================================================== -->
+    <section class="section" data-animate="fade-up" data-duration="800" style="padding: 90px 24px; background: radial-gradient(circle at center, rgba(212, 175, 55, 0.15) 0%, rgba(10, 10, 12, 0.98) 70%), #0a0a0c;">
+      <div class="container">
+        <div class="concierge-vip-box">
+          <div>
+            <span class="section-badge">VIP CELEBRATION CONCIERGE</span>
+            <h2 style="font-size: 34px; font-weight: 800; color: #ffffff; margin-bottom: 14px; font-family: var(--font-heading);">
+              Planning a Custom Private <span class="gold-text">Milestone Event</span>?
+            </h2>
+            <p style="font-size: 16px; color: var(--color-text-secondary); line-height: 1.6; max-width: 620px;">
+              Connect directly with our senior celebration directors to design a tailor-made royal wedding itinerary, grand surprise birthday bash, or sacred cradle ceremony with bespoke culinary masters.
+            </p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px; min-width: 250px;">
+            <a href="contact.html" class="btn btn-primary" style="text-align: center;">Schedule Consultation</a>
+            <a href="tel:+919876543210" class="btn btn-secondary" style="text-align: center;">Call +91 9876543210</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pass Booking Modal -->
+  <div class="modal-overlay" id="registration-modal" role="dialog" aria-modal="true" aria-labelledby="modal-event-name">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span style="font-size: 11px; text-transform: uppercase; color: var(--color-accent-gold); letter-spacing: 1px;">Royal Celebration Pass</span>
+          <h3 class="modal-title" id="modal-event-name">Celebration Registration</h3>
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div id="modal-reg-success" style="display: none;"></div>
+
+      <form id="registration-form">
+        <div class="modal-form-group">
+          <label class="modal-label" for="reg-fullname">Primary Guest / Host Name *</label>
+          <input type="text" id="reg-fullname" class="modal-input" placeholder="e.g. Eleanor Vance" required>
+        </div>
+
+        <div class="modal-form-group">
+          <label class="modal-label" for="reg-email">Email Address *</label>
+          <input type="email" id="reg-email" class="modal-input" placeholder="e.g. eleanor@domain.com" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 14px;">
+          <div class="modal-form-group">
+            <label class="modal-label" for="ticket-tier">Pass Tier</label>
+            <select id="ticket-tier" class="modal-select">
+              <option value="1">Standard Guest Pass</option>
+              <option value="1.75">VIP Table Pass</option>
+              <option value="2.5">Royal Deluxe Pass</option>
+            </select>
+          </div>
+
+          <div class="modal-form-group">
+            <label class="modal-label" for="ticket-quantity">Passes</label>
+            <input type="number" id="ticket-quantity" class="modal-input" min="1" max="20" value="1" required>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px; background: rgba(10, 10, 12, 0.8); border: 1px solid var(--color-border-gold); border-radius: var(--radius-sm); margin-bottom: 20px;">
+          <span style="font-size: 14px; color: var(--color-text-secondary);">Total Payable:</span>
+          <span id="total-price-display" style="font-size: 22px; font-weight: 800; color: var(--color-accent-gold-light);">₹199</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm Invitation Pass</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 100% Full-Width Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-brand" style="margin-bottom: 8px;">
+            <svg class="nav-brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="398 82 212 290" aria-label="Stackly Logo"><defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f6e27a"/><stop offset="50%" style="stop-color:#d4af37"/><stop offset="100%" style="stop-color:#aa771c"/></linearGradient></defs><path fill="url(#goldGrad)" d="M419.713867,256.179962 C408.001251,235.739304 410.215973,215.613876 419.889709,195.679504 C426.373138,182.319229 436.255493,171.444672 446.508270,160.904480 C457.075165,150.041229 468.783997,140.348602 478.792694,128.896606 C487.411407,119.035004 494.797852,108.464394 500.031921,96.425682 C500.738983,94.799370 501.001617,92.854477 502.785980,91.712807 C503.214905,91.838028 503.879059,91.821617 504.103485,92.127670 C514.526489,106.341171 522.003967,121.483376 518.287415,139.859406 C515.933533,151.498276 508.987885,160.308563 500.296600,167.942245 C487.788574,178.928223 473.634369,187.949692 462.046570,200.037262 C456.219025,206.116135 451.191589,212.659836 449.149933,221.054688 C445.376373,236.570572 454.272034,249.198563 470.197021,250.779221 C485.241028,252.272446 499.302216,248.880798 512.632202,241.996979 C514.021362,241.279602 515.213196,239.793518 517.062500,240.547546 C517.833252,242.063324 516.690857,242.794266 515.917847,243.562866 C502.480865,256.923462 487.519073,267.973206 468.591339,271.949402 C447.923096,276.291199 431.269562,272.383606 419.713867,256.179962Z"/><path fill="url(#goldGrad)" d="M536.351807,311.352905 C521.089722,325.623138 508.631836,341.451172 501.644409,361.304535 C500.580017,360.856842 499.799347,360.777496 499.458496,360.348633 C491.323975,350.113098 485.458466,338.909088 484.707672,325.531189 C484.034546,313.536499 489.236786,303.909576 496.947052,295.363251 C506.737030,284.511749 519.089050,276.702271 530.329102,267.573334 C539.676453,259.981689 548.930542,252.352356 553.649658,240.719803 C556.247925,234.315125 556.803040,227.722214 555.167542,221.122284 C551.964783,208.197189 539.399353,200.886032 526.174622,203.877502 C513.911682,206.651428 503.242737,212.702515 493.079834,219.823700 C492.039246,220.552856 491.267578,221.851700 489.661957,221.557190 C488.659760,220.289383 489.653076,219.345703 490.287292,218.480408 C503.850159,199.976334 521.506714,187.674316 544.321167,183.636948 C574.742554,178.253418 599.437622,199.883118 594.804749,234.346802 C592.539368,251.198425 583.628967,264.794067 572.581299,277.156372 C561.558105,289.491241 548.610413,299.803345 536.351807,311.352905Z"/></svg>
+            <div class="nav-brand-text" style="font-size: 21px;">STACKLY<span>.</span></div>
+          </div>
+          <p>
+            We help families and organizations create lifetime memories through luxury event production, bespoke catering, digital invitations, and flawless on-site coordination.
+          </p>
+          <div class="footer-newsletter-title">Grow With Our Weekly Marketing Tips</div>
+          <form class="footer-newsletter-form">
+            <input type="email" class="footer-newsletter-input" placeholder="Enter your email" required aria-label="Newsletter email">
+            <button type="submit" class="footer-newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Celebrations</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?filter=wedding">Royal Weddings &amp; Receptions</a></li>
+            <li><a href="events.html?filter=birthday">Grand Milestone Birthdays</a></li>
+            <li><a href="events.html?filter=dance">Sangeet &amp; DJ Dance Nights</a></li>
+            <li><a href="events.html?filter=baby-naming">Baby Naming &amp; Cradle Ceremonies</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="blog.html">Celebration Journal</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Headquarters</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Stackly Salem Office</a></li>
+            <li><a href="tel:+919876543210">+91 9876543210</a></li>
+            <li><a href="mailto:support@thestackly.com">support@thestackly.com</a></li>
+            <li><a href="contact.html#salem-map-section">Chinna Tirupathi, Salem - 636008</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2026 Digital Edge Agency / Stackly. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms &amp; Conditions</a>
+          <a href="contact.html">Support</a>
+        </div>
+        <div class="footer-socials">
+          <a href="https://facebook.com" class="footer-social-link" target="_blank" rel="noopener">f</a>
+          <a href="https://instagram.com" class="footer-social-link" target="_blank" rel="noopener">ig</a>
+          <a href="https://x.com" class="footer-social-link" target="_blank" rel="noopener">𝕏</a>
+          <a href="https://linkedin.com" class="footer-social-link" target="_blank" rel="noopener">in</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/loader.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+/* ==========================================================================
+   STACKLY THEME - Scroll Animation System v4 (Silky Luxury Section Motion)
+   Smooth section-by-section and card-by-card reveal as user scrolls
+   ========================================================================== */
+
+/* ── Hero Sections are always visible on load (no blank screen) ── */
+.hero-section,
+.about-hero,
+.events-hero-wrapper,
+.team-hero,
+.blog-hero,
+.contact-hero,
+section:first-of-type,
+.standalone-minimal-header,
+.standalone-minimal-footer,
+.site-header {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ── Section-Level Animations ── */
+section[data-animate],
+.anim-section {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+section[data-animate].is-visible,
+.anim-section.is-visible,
+[data-animate].is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Directional variants for data-animate */
+[data-animate="fade"] {
+  opacity: 0;
+  transform: none;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate="fade-left"] {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate="fade-right"] {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate="scale-in"] {
+  opacity: 0;
+  transform: scale(0.94) translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate="fade-up"] {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Active states for variants */
+[data-animate="fade"].is-visible,
+[data-animate="fade-left"].is-visible,
+[data-animate="fade-right"].is-visible,
+[data-animate="scale-in"].is-visible,
+[data-animate="fade-up"].is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ── Content Cards & Items Staggered Entrance ── */
+.event-card,
+.venue-card,
+.venue-status-card,
+.bento-card,
+.team-card,
+.blog-card,
+.service-card,
+.value-card,
+.milestone-item,
+.counter-box,
+.stat-box,
+.kpi-card,
+.testimonial-card,
+.gallery-item,
+.perk-card,
+.timeline-card {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.event-card.is-visible,
+.venue-card.is-visible,
+.venue-status-card.is-visible,
+.bento-card.is-visible,
+.team-card.is-visible,
+.blog-card.is-visible,
+.service-card.is-visible,
+.value-card.is-visible,
+.milestone-item.is-visible,
+.counter-box.is-visible,
+.stat-box.is-visible,
+.kpi-card.is-visible,
+.testimonial-card.is-visible,
+.gallery-item.is-visible,
+.perk-card.is-visible,
+.timeline-card.is-visible,
+section.is-visible .event-card,
+section.is-visible .venue-card,
+section.is-visible .venue-status-card,
+section.is-visible .bento-card,
+section.is-visible .team-card,
+section.is-visible .blog-card,
+section.is-visible .service-card,
+section.is-visible .value-card,
+section.is-visible .milestone-item,
+section.is-visible .counter-box,
+section.is-visible .stat-box,
+section.is-visible .kpi-card,
+section.is-visible .testimonial-card,
+section.is-visible .gallery-item,
+section.is-visible .perk-card,
+section.is-visible .timeline-card {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Stagger transitions when parent container becomes visible */
+.is-visible .event-card:nth-child(1),
+.is-visible .team-card:nth-child(1),
+.is-visible .blog-card:nth-child(1),
+.is-visible .bento-card:nth-child(1),
+.is-visible .gallery-item:nth-child(1),
+.is-visible .testimonial-card:nth-child(1),
+[data-stagger].is-visible > *:nth-child(1)  { transition-delay: 0.05s; }
+
+.is-visible .event-card:nth-child(2),
+.is-visible .team-card:nth-child(2),
+.is-visible .blog-card:nth-child(2),
+.is-visible .bento-card:nth-child(2),
+.is-visible .gallery-item:nth-child(2),
+.is-visible .testimonial-card:nth-child(2),
+[data-stagger].is-visible > *:nth-child(2)  { transition-delay: 0.12s; }
+
+.is-visible .event-card:nth-child(3),
+.is-visible .team-card:nth-child(3),
+.is-visible .blog-card:nth-child(3),
+.is-visible .bento-card:nth-child(3),
+.is-visible .gallery-item:nth-child(3),
+.is-visible .testimonial-card:nth-child(3),
+[data-stagger].is-visible > *:nth-child(3)  { transition-delay: 0.19s; }
+
+.is-visible .event-card:nth-child(4),
+.is-visible .team-card:nth-child(4),
+.is-visible .blog-card:nth-child(4),
+.is-visible .bento-card:nth-child(4),
+.is-visible .gallery-item:nth-child(4),
+.is-visible .testimonial-card:nth-child(4),
+[data-stagger].is-visible > *:nth-child(4)  { transition-delay: 0.26s; }
+
+.is-visible .event-card:nth-child(5),
+.is-visible .team-card:nth-child(5),
+.is-visible .blog-card:nth-child(5),
+[data-stagger].is-visible > *:nth-child(5)  { transition-delay: 0.33s; }
+
+.is-visible .event-card:nth-child(6),
+.is-visible .team-card:nth-child(6),
+.is-visible .blog-card:nth-child(6),
+[data-stagger].is-visible > *:nth-child(6)  { transition-delay: 0.40s; }
+
+/* ── Gold Scroll Progress Bar at very top of screen ── */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #d4af37 0%, #f6e27a 50%, #aa771c 100%);
+  z-index: 99999;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.85);
+  pointer-events: none;
+  transition: width 0.08s linear;
+}

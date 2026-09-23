@@ -1,0 +1,906 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly - Luxury Celebrations & Events Registration Platform</title>
+  <meta name="description" content="Premium event registration & bespoke management for Royal Weddings, Grand Birthdays, Dance & Sangeet Nights, and Traditional Baby Naming Ceremonies.">
+
+  <!-- Stylesheets (PRD Compliant) -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/loader.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       PRD LOADER PAGE (PAGES 4-15 COMPLIANT - BLACK & GOLD)
+       ========================================================================== -->
+  <div id="page-loader" class="loader-container" role="status" aria-live="polite">
+    <div class="loader-logo-wrapper">
+      <svg class="loader-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="398 82 212 290" aria-label="Stackly Logo">
+        <defs>
+          <linearGradient id="loaderGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#f6e27a"/>
+            <stop offset="50%" style="stop-color:#d4af37"/>
+            <stop offset="100%" style="stop-color:#aa771c"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#loaderGoldGrad)" d="M419.713867,256.179962 C408.001251,235.739304 410.215973,215.613876 419.889709,195.679504 C426.373138,182.319229 436.255493,171.444672 446.508270,160.904480 C457.075165,150.041229 468.783997,140.348602 478.792694,128.896606 C487.411407,119.035004 494.797852,108.464394 500.031921,96.425682 C500.738983,94.799370 501.001617,92.854477 502.785980,91.712807 C503.214905,91.838028 503.879059,91.821617 504.103485,92.127670 C514.526489,106.341171 522.003967,121.483376 518.287415,139.859406 C515.933533,151.498276 508.987885,160.308563 500.296600,167.942245 C487.788574,178.928223 473.634369,187.949692 462.046570,200.037262 C456.219025,206.116135 451.191589,212.659836 449.149933,221.054688 C445.376373,236.570572 454.272034,249.198563 470.197021,250.779221 C485.241028,252.272446 499.302216,248.880798 512.632202,241.996979 C514.021362,241.279602 515.213196,239.793518 517.062500,240.547546 C517.833252,242.063324 516.690857,242.794266 515.917847,243.562866 C502.480865,256.923462 487.519073,267.973206 468.591339,271.949402 C447.923096,276.291199 431.269562,272.383606 419.713867,256.179962Z"/>
+        <path fill="url(#loaderGoldGrad)" d="M536.351807,311.352905 C521.089722,325.623138 508.631836,341.451172 501.644409,361.304535 C500.580017,360.856842 499.799347,360.777496 499.458496,360.348633 C491.323975,350.113098 485.458466,338.909088 484.707672,325.531189 C484.034546,313.536499 489.236786,303.909576 496.947052,295.363251 C506.737030,284.511749 519.089050,276.702271 530.329102,267.573334 C539.676453,259.981689 548.930542,252.352356 553.649658,240.719803 C556.247925,234.315125 556.803040,227.722214 555.167542,221.122284 C551.964783,208.197189 539.399353,200.886032 526.174622,203.877502 C513.911682,206.651428 503.242737,212.702515 493.079834,219.823700 C492.039246,220.552856 491.267578,221.851700 489.661957,221.557190 C488.659760,220.289383 489.653076,219.345703 490.287292,218.480408 C503.850159,199.976334 521.506714,187.674316 544.321167,183.636948 C574.742554,178.253418 599.437622,199.883118 594.804749,234.346802 C592.539368,251.198425 583.628967,264.794067 572.581299,277.156372 C561.558105,289.491241 548.610413,299.803345 536.351807,311.352905Z"/>
+      </svg>
+      <div class="loader-brand-title">STACKLY<span>.</span></div>
+    </div>
+    
+    <div class="loader-spinner-wrapper">
+      <div class="loader-spinner" aria-hidden="true"></div>
+    </div>
+
+    <div class="loader-text">Curating Royal Moments...</div>
+    <div class="loader-subtext" id="loader-status">INITIALIZING STACKLY CELEBRATION PROTOCOLS...</div>
+  </div>
+
+  <!-- ==========================================================================
+       100% FULL-WIDTH STICKY NAVBAR (PRD PAGES 15-17 COMPLIANT)
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="navbar-container">
+      <!-- Clickable Brand Logo -->
+      <a href="index.html" class="nav-brand" aria-label="Stackly Homepage">
+        <svg class="nav-brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="398 82 212 290" aria-label="Stackly Logo"><defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f6e27a"/><stop offset="50%" style="stop-color:#d4af37"/><stop offset="100%" style="stop-color:#aa771c"/></linearGradient></defs><path fill="url(#goldGrad)" d="M419.713867,256.179962 C408.001251,235.739304 410.215973,215.613876 419.889709,195.679504 C426.373138,182.319229 436.255493,171.444672 446.508270,160.904480 C457.075165,150.041229 468.783997,140.348602 478.792694,128.896606 C487.411407,119.035004 494.797852,108.464394 500.031921,96.425682 C500.738983,94.799370 501.001617,92.854477 502.785980,91.712807 C503.214905,91.838028 503.879059,91.821617 504.103485,92.127670 C514.526489,106.341171 522.003967,121.483376 518.287415,139.859406 C515.933533,151.498276 508.987885,160.308563 500.296600,167.942245 C487.788574,178.928223 473.634369,187.949692 462.046570,200.037262 C456.219025,206.116135 451.191589,212.659836 449.149933,221.054688 C445.376373,236.570572 454.272034,249.198563 470.197021,250.779221 C485.241028,252.272446 499.302216,248.880798 512.632202,241.996979 C514.021362,241.279602 515.213196,239.793518 517.062500,240.547546 C517.833252,242.063324 516.690857,242.794266 515.917847,243.562866 C502.480865,256.923462 487.519073,267.973206 468.591339,271.949402 C447.923096,276.291199 431.269562,272.383606 419.713867,256.179962Z"/><path fill="url(#goldGrad)" d="M536.351807,311.352905 C521.089722,325.623138 508.631836,341.451172 501.644409,361.304535 C500.580017,360.856842 499.799347,360.777496 499.458496,360.348633 C491.323975,350.113098 485.458466,338.909088 484.707672,325.531189 C484.034546,313.536499 489.236786,303.909576 496.947052,295.363251 C506.737030,284.511749 519.089050,276.702271 530.329102,267.573334 C539.676453,259.981689 548.930542,252.352356 553.649658,240.719803 C556.247925,234.315125 556.803040,227.722214 555.167542,221.122284 C551.964783,208.197189 539.399353,200.886032 526.174622,203.877502 C513.911682,206.651428 503.242737,212.702515 493.079834,219.823700 C492.039246,220.552856 491.267578,221.851700 489.661957,221.557190 C488.659760,220.289383 489.653076,219.345703 490.287292,218.480408 C503.850159,199.976334 521.506714,187.674316 544.321167,183.636948 C574.742554,178.253418 599.437622,199.883118 594.804749,234.346802 C592.539368,251.198425 583.628967,264.794067 572.581299,277.156372 C561.558105,289.491241 548.610413,299.803345 536.351807,311.352905Z"/></svg>
+        <div class="nav-brand-text">STACKLY<span>.</span></div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="events.html" class="nav-link">
+              Celebrations <span class="dropdown-indicator">▼</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="events.html?filter=wedding">Royal Weddings</a></li>
+              <li class="dropdown-item"><a href="events.html?filter=birthday">Grand Birthdays</a></li>
+              <li class="dropdown-item"><a href="events.html?filter=dance">Sangeet &amp; Dance Nights</a></li>
+              <li class="dropdown-item"><a href="events.html?filter=baby-naming">Baby Naming Ceremonies</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="team.html" class="nav-link">Team</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Journal</a>
+          </li>
+          <li class="nav-item">
+            <a href="#packages-section" class="nav-link">
+              Packages <span class="dropdown-indicator">▼</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="#packages-section">Wedding Palace Suite</a></li>
+              <li class="dropdown-item"><a href="#packages-section">Birthday Blast Package</a></li>
+              <li class="dropdown-item"><a href="#packages-section">DJ &amp; Dance Extravaganza</a></li>
+              <li class="dropdown-item"><a href="#packages-section">Baby Cradle Ceremony</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <a href="events.html" class="btn-book">Book Celebration</a>
+        <a href="login.html" class="btn-login">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+          Login
+        </a>
+      </div>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MOBILE DRAWER (PRD IMAGE 1 COMPLIANT - BLACK & GOLD)
+       ========================================================================== -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Drawer Navigation">
+    <div class="drawer-header">
+      <div class="nav-brand">
+        <svg class="nav-brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="398 82 212 290" aria-label="Stackly Logo"><defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f6e27a"/><stop offset="50%" style="stop-color:#d4af37"/><stop offset="100%" style="stop-color:#aa771c"/></linearGradient></defs><path fill="url(#goldGrad)" d="M419.713867,256.179962 C408.001251,235.739304 410.215973,215.613876 419.889709,195.679504 C426.373138,182.319229 436.255493,171.444672 446.508270,160.904480 C457.075165,150.041229 468.783997,140.348602 478.792694,128.896606 C487.411407,119.035004 494.797852,108.464394 500.031921,96.425682 C500.738983,94.799370 501.001617,92.854477 502.785980,91.712807 C503.214905,91.838028 503.879059,91.821617 504.103485,92.127670 C514.526489,106.341171 522.003967,121.483376 518.287415,139.859406 C515.933533,151.498276 508.987885,160.308563 500.296600,167.942245 C487.788574,178.928223 473.634369,187.949692 462.046570,200.037262 C456.219025,206.116135 451.191589,212.659836 449.149933,221.054688 C445.376373,236.570572 454.272034,249.198563 470.197021,250.779221 C485.241028,252.272446 499.302216,248.880798 512.632202,241.996979 C514.021362,241.279602 515.213196,239.793518 517.062500,240.547546 C517.833252,242.063324 516.690857,242.794266 515.917847,243.562866 C502.480865,256.923462 487.519073,267.973206 468.591339,271.949402 C447.923096,276.291199 431.269562,272.383606 419.713867,256.179962Z"/><path fill="url(#goldGrad)" d="M536.351807,311.352905 C521.089722,325.623138 508.631836,341.451172 501.644409,361.304535 C500.580017,360.856842 499.799347,360.777496 499.458496,360.348633 C491.323975,350.113098 485.458466,338.909088 484.707672,325.531189 C484.034546,313.536499 489.236786,303.909576 496.947052,295.363251 C506.737030,284.511749 519.089050,276.702271 530.329102,267.573334 C539.676453,259.981689 548.930542,252.352356 553.649658,240.719803 C556.247925,234.315125 556.803040,227.722214 555.167542,221.122284 C551.964783,208.197189 539.399353,200.886032 526.174622,203.877502 C513.911682,206.651428 503.242737,212.702515 493.079834,219.823700 C492.039246,220.552856 491.267578,221.851700 489.661957,221.557190 C488.659760,220.289383 489.653076,219.345703 490.287292,218.480408 C503.850159,199.976334 521.506714,187.674316 544.321167,183.636948 C574.742554,178.253418 599.437622,199.883118 594.804749,234.346802 C592.539368,251.198425 583.628967,264.794067 572.581299,277.156372 C561.558105,289.491241 548.610413,299.803345 536.351807,311.352905Z"/></svg>
+        <div class="nav-brand-text" style="font-size: 20px;">STACKLY<span>.</span></div>
+      </div>
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close navigation drawer">✕</button>
+    </div>
+
+    <!-- PRD Image 1: "Search Now!" Section -->
+    <div class="drawer-search-box">
+      <div class="drawer-search-title">Search Now!</div>
+      <form class="drawer-search-form" id="drawer-search-form">
+        <input type="text" class="drawer-search-input" placeholder="Search here..." required>
+        <button type="submit" class="drawer-search-btn" aria-label="Submit search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- PRD Image 1: Vertical Navigation Links -->
+    <ul class="drawer-nav">
+      <li class="drawer-nav-item">
+        <a href="index.html" class="drawer-nav-link active">
+          <span>Home</span>
+          <button class="drawer-accordion-btn" data-target="drawer-sub-home">▼</button>
+        </a>
+        <ul class="drawer-submenu" id="drawer-sub-home">
+          <li class="drawer-submenu-item"><a href="index.html">Main Experience</a></li>
+          <li class="drawer-submenu-item"><a href="about.html">About Stackly</a></li>
+        </ul>
+      </li>
+      <li class="drawer-nav-item">
+        <a href="events.html" class="drawer-nav-link">
+          <span>Celebrations</span>
+          <button class="drawer-accordion-btn" data-target="drawer-sub-events">▼</button>
+        </a>
+        <ul class="drawer-submenu" id="drawer-sub-events">
+          <li class="drawer-submenu-item"><a href="events.html?filter=wedding">Royal Weddings</a></li>
+          <li class="drawer-submenu-item"><a href="events.html?filter=birthday">Grand Birthdays</a></li>
+          <li class="drawer-submenu-item"><a href="events.html?filter=dance">Sangeet &amp; Dance Nights</a></li>
+          <li class="drawer-submenu-item"><a href="events.html?filter=baby-naming">Baby Naming Ceremonies</a></li>
+        </ul>
+      </li>
+      <li class="drawer-nav-item"><a href="about.html" class="drawer-nav-link">About Us</a></li>
+      <li class="drawer-nav-item"><a href="team.html" class="drawer-nav-link">Our Team</a></li>
+      <li class="drawer-nav-item"><a href="blog.html" class="drawer-nav-link">Celebration Journal</a></li>
+      <li class="drawer-nav-item"><a href="#packages-section" class="drawer-nav-link">Packages</a></li>
+      <li class="drawer-nav-item"><a href="contact.html" class="drawer-nav-link">Contact</a></li>
+    </ul>
+
+        <!-- PRD Mobile Drawer: Login & Action Buttons -->
+    <div class="drawer-actions">
+      <a href="login.html" class="btn-login drawer-btn-login">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+        <span>Login</span>
+      </a>
+      <a href="events.html" class="btn-book drawer-btn-book">Book Celebration</a>
+      <button class="drawer-logout-btn btn-dash-logout" style="display: none;" aria-label="Log out of account">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        <span>Log Out</span>
+      </button>
+    </div>
+
+    <!-- PRD Image 1: Bottom "Contact Info" Card -->
+    <div class="drawer-contact-card">
+      <div class="drawer-contact-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        Contact Info
+      </div>
+      <div class="drawer-contact-item">
+        <span class="drawer-contact-label">Phone</span>
+        <a href="tel:+919876543210">+91 9876543210</a>
+      </div>
+      <div class="drawer-contact-item">
+        <span class="drawer-contact-label">Email</span>
+        <a href="mailto:support@thestackly.com">support@thestackly.com</a>
+      </div>
+      <div class="drawer-contact-item">
+        <span class="drawer-contact-label">Location</span>
+        <span>Stackly, Salem</span>
+      </div>
+      <div class="drawer-socials">
+        <a href="https://facebook.com" class="drawer-social-icon" target="_blank" rel="noopener">f</a>
+        <a href="https://instagram.com" class="drawer-social-icon" target="_blank" rel="noopener">ig</a>
+        <a href="https://x.com" class="drawer-social-icon" target="_blank" rel="noopener">𝕏</a>
+        <a href="https://linkedin.com" class="drawer-social-icon" target="_blank" rel="noopener">in</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 1: HERO SECTION (ASYMMETRIC SPLIT WITH FLOATING GLASS PASS)
+         ========================================================================== -->
+    <section class="hero-section" data-animate="fade" data-duration="1200" data-animate="fade" data-duration="1200">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <span class="section-badge">Bespoke Celebrations &amp; Milestones</span>
+            <h1 class="hero-title">
+              "Empowering celebrations with <span class="gold-text">royal elegance</span> and grandeur."
+            </h1>
+            <p class="hero-desc">
+              We are a forward-thinking event architecture platform creating unforgettable memories for life's greatest milestones. From royal palace weddings and high-energy dance nights to heartwarming baby naming and birthday galas, we deliver tailored event registration, guest management, and luxury hospitality.
+            </p>
+            <div class="hero-cta-group">
+              <a href="events.html" class="btn btn-primary">Reserve Royal Pass</a>
+              <a href="#estimator-section" class="btn btn-secondary">Cost Calculator</a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stat-item">
+                <h3>1,800+</h3>
+                <p>Weddings &amp; Galas</p>
+              </div>
+              <div class="hero-stat-item">
+                <h3>450K+</h3>
+                <p>Happy Guests</p>
+              </div>
+              <div class="hero-stat-item">
+                <h3>99.9%</h3>
+                <p>Flawless Execution</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual & Floating Badge -->
+          <div class="hero-visual">
+            <div class="hero-card-stack">
+              <div class="hero-badge-float">
+                <span class="dot"></span>
+                <span>VIP Invitation #ROYAL-2026</span>
+              </div>
+              <div class="hero-card-image">
+                <img src="assets/img-1519741497674-611481863552.webp" alt="Royal Wedding Celebration">
+              </div>
+              <div class="hero-card-details">
+                <span class="hero-card-tag">FLAGSHIP DESTINATION WEDDING</span>
+                <h3 class="hero-card-title">The Royal Palace Vivanta Wedding</h3>
+                <div class="hero-card-meta">
+                  <span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="18" y2="10"></line></svg> Nov 18, 2026 • Salem Palace</span>
+                  <span class="hero-card-price">₹250 <span>/ pass</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2: ABOUT SECTION (EDITORIAL MAGAZINE ARCHED PORTRAIT LAYOUT)
+         ========================================================================== -->
+    <section class="section about-section" data-animate="fade-up" data-duration="800" id="about-company">
+      <div class="container">
+        <div class="about-editorial-grid">
+          
+          <div class="about-arched-composition">
+            <div class="about-main-arch">
+              <img src="assets/img-1511795409834-ef04bbd61622.webp" alt="Stackly Luxury Celebration Planners">
+            </div>
+            <div class="about-floating-card">
+              <div class="about-floating-quote">"True grandeur lies in effortless execution and unspoken hospitality."</div>
+              <div class="about-floating-author">— Stackly Curators Circle</div>
+            </div>
+          </div>
+
+          <div class="about-content">
+            <span class="section-badge">ABOUT COMPANY</span>
+            <h2 class="section-title">Streamlining Workflow, Enhancing Elegance &amp; Driving Event Perfection</h2>
+            <p>
+              Stackly is a powerful platform that streamlines workflow, enhances efficiency, and drives celebration success. It offers a user-friendly experience with seamless integration, making it an essential tool for families, planners, and organizations looking to orchestrate flawless high-profile events.
+            </p>
+            <p>
+              Founded in 2015, Stackly has grown into one of the leading and most innovative event companies in the industry. With a team of over 120 talented professionals, we specialize in delivering cutting-edge technology and hospitality solutions that turn special occasions into legendary celebrations.
+            </p>
+
+            <div class="about-stat-strip">
+              <div class="about-stat-strip-item">
+                <h4>2015</h4>
+                <p>Founded with Royal Ambition</p>
+              </div>
+              <div class="about-stat-strip-item">
+                <h4>120+</h4>
+                <p>Master Planners &amp; Artisans</p>
+              </div>
+              <div class="about-stat-strip-item">
+                <h4>10+ Yrs</h4>
+                <p>Heritage in Salem &amp; Beyond</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="team.html" class="btn btn-primary">Meet Our Curators</a>
+              <a href="contact.html" class="btn btn-outline">Our Salem Studio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3: CELEBRATION CATEGORIES (ASYMMETRIC BENTO GRID - NON-BOX)
+         ========================================================================== -->
+    <section class="section section-alt" data-animate="fade-up" data-duration="800">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 20px;">
+          <span class="section-badge">ROYAL PORTFOLIO</span>
+          <h2 class="section-title">Celebrations Designed for <span class="gold-text">Timeless Joy</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Select your milestone celebration to view curated packages, ticketing passes, and design inspirations.</p>
+        </div>
+
+        <div class="bento-categories-grid">
+          <!-- Bento 1: Large Featured Wedding -->
+          <a href="events.html?filter=wedding" class="bento-card bento-tall">
+            <img src="assets/img-1519741497674-611481863552.webp" alt="Royal Wedding" class="bento-bg-img">
+            <div class="bento-gradient-overlay"></div>
+            <div class="bento-content">
+              <span class="bento-pill-tag">ROYAL MARRIAGES</span>
+              <h3 class="bento-title">Palace Weddings &amp; Receptions</h3>
+              <p class="bento-desc">Grand temple mandaps, heritage ballroom dining, multi-day guest ticketing, and silver service banquets.</p>
+            </div>
+          </a>
+
+          <!-- Bento 2: Birthday Galas -->
+          <a href="events.html?filter=birthday" class="bento-card">
+            <img src="assets/img-1464349095431-e9a21285b5f3.webp" alt="Birthday Party" class="bento-bg-img">
+            <div class="bento-gradient-overlay"></div>
+            <div class="bento-content">
+              <span class="bento-pill-tag">MILESTONE BIRTHDAYS</span>
+              <h3 class="bento-title" style="font-size: 22px;">1st Birthday to 50th Galas</h3>
+              <p class="bento-desc" style="font-size: 13px;">Neon carnivals, puppet wonderlands, and golden jubilee evenings.</p>
+            </div>
+          </a>
+
+          <!-- Bento 3: Sangeet Dance -->
+          <a href="events.html?filter=dance" class="bento-card">
+            <img src="assets/img-1516450360452-9312f5e86fc7.webp" alt="Sangeet Dance Night" class="bento-bg-img">
+            <div class="bento-gradient-overlay"></div>
+            <div class="bento-content">
+              <span class="bento-pill-tag">SANGEET &amp; DANCE</span>
+              <h3 class="bento-title" style="font-size: 22px;">Sangeet &amp; High-Bass DJ Nights</h3>
+              <p class="bento-desc" style="font-size: 13px;">Interactive LED dancefloors, live dhol troupes, and choreographed entrances.</p>
+            </div>
+          </a>
+
+          <!-- Bento 4: Baby Naming Ceremony (Wide Banner) -->
+          <a href="events.html?filter=baby-naming" class="bento-card bento-wide">
+            <img src="assets/img-1519689680058-324335c77eba.webp" alt="Baby Naming Ceremony" class="bento-bg-img">
+            <div class="bento-gradient-overlay"></div>
+            <div class="bento-content">
+              <span class="bento-pill-tag">BABY NAMING CEREMONIES</span>
+              <h3 class="bento-title" style="font-size: 24px;">Traditional Cradle &amp; Namakaran Ceremonies</h3>
+              <p class="bento-desc">Sacred floral swings, auspicious chanting audio, and welcoming baby into the family circle with blessings.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4: FEATURED GRAND CELEBRATIONS SHOWCASE (DYNAMIC CARDS)
+         ========================================================================== -->
+    <section class="section" data-animate="fade-up" data-duration="800" id="featured-events">
+      <div class="container">
+        <div class="events-header">
+          <div>
+            <span class="section-badge">UPCOMING GATHERINGS</span>
+            <h2 class="section-title">Featured Grand <span class="gold-text">Celebrations</span></h2>
+            <p class="section-subtitle">Reserve invitations and guest passes for premier public galas and family celebration showcases.</p>
+          </div>
+          <div class="events-filters">
+            <button class="filter-pill active" data-filter="all">All Celebrations</button>
+            <button class="filter-pill" data-filter="wedding">Weddings</button>
+            <button class="filter-pill" data-filter="birthday">Birthdays</button>
+            <button class="filter-pill" data-filter="dance">Dance &amp; DJ</button>
+            <button class="filter-pill" data-filter="baby-naming">Baby Naming</button>
+          </div>
+        </div>
+
+        <div class="events-grid" id="events-grid-container">
+          <!-- Dynamically populated via js/events.js -->
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+          <a href="events.html" class="btn btn-secondary">View All Celebration Passes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5: BESPOKE CELEBRATION PACKAGES (TIERED ROYAL SUITES)
+         ========================================================================== -->
+    <section class="section section-alt" data-animate="fade-up" data-duration="800" id="packages-section">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="section-badge">CURATED PACKAGES</span>
+          <h2 class="section-title">All-Inclusive <span class="gold-text">Celebration Suites</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Everything handled end-to-end: invitations, luxury decor, catering, artists, and live streaming.</p>
+        </div>
+
+        <div class="packages-tiered-container">
+          <!-- Package 1: Baby Naming -->
+          <div class="package-card">
+            <h3 class="package-tier-title">Cradle Wonder</h3>
+            <p class="package-tagline">Baby Naming &amp; Cradle Ceremony</p>
+            <div class="package-price">₹1,499 <span>/ event</span></div>
+            <ul class="package-features">
+              <li>Up to 150 Attendees</li>
+              <li>Floral Swing &amp; Cradle Decor</li>
+              <li>Traditional Music &amp; Priest Audio</li>
+              <li>Digital QR Invitations</li>
+              <li>Gourmet Vegetarian Feast</li>
+              <li>HD Photography &amp; Family Reel</li>
+            </ul>
+            <a href="contact.html?package=cradle" class="btn btn-outline" style="width: 100%;">Book Package</a>
+          </div>
+
+          <!-- Package 2: Birthday Bash -->
+          <div class="package-card">
+            <h3 class="package-tier-title">Birthday Extravaganza</h3>
+            <p class="package-tagline">Milestone Birthday &amp; Carnival</p>
+            <div class="package-price">₹2,899 <span>/ event</span></div>
+            <ul class="package-features">
+              <li>Up to 250 Guests</li>
+              <li>Custom Themed Stage &amp; 3D Balloons</li>
+              <li>Celebrity Emcee &amp; Magic Shows</li>
+              <li>Artisan Cake &amp; Dessert Buffet</li>
+              <li>Confetti Blasters &amp; Photo Booth</li>
+              <li>Instant Photo Prints for Guests</li>
+            </ul>
+            <a href="contact.html?package=birthday" class="btn btn-outline" style="width: 100%;">Book Package</a>
+          </div>
+
+          <!-- Package 3: Wedding Palace (Featured Tier) -->
+          <div class="package-card featured">
+            <span class="package-ribbon">ROYAL FAVORITE</span>
+            <h3 class="package-tier-title">Royal Wedding Suite</h3>
+            <p class="package-tagline">Palace Wedding &amp; Reception</p>
+            <div class="package-price">₹8,999 <span>/ event</span></div>
+            <ul class="package-features">
+              <li>Up to 800+ Royal Guests</li>
+              <li>Majestic Floral Mandap &amp; Entryway</li>
+              <li>7-Course Royal Heritage Buffet</li>
+              <li>VIP Check-In &amp; Attendee Badging</li>
+              <li>Live Symphony &amp; Shehnai Masters</li>
+              <li>4K Drone Filming &amp; Cinematic Film</li>
+            </ul>
+            <a href="contact.html?package=royal-wedding" class="btn btn-primary" style="width: 100%;">Reserve Royal Suite</a>
+          </div>
+
+          <!-- Package 4: Dance & Sangeet -->
+          <div class="package-card">
+            <h3 class="package-tier-title">Sangeet &amp; Dance Club</h3>
+            <p class="package-tagline">High Energy DJ &amp; Sangeet Night</p>
+            <div class="package-price">₹3,499 <span>/ event</span></div>
+            <ul class="package-features">
+              <li>Up to 400 Party Guests</li>
+              <li>Giant Interactive LED Dancefloor</li>
+              <li>Top Tier DJ &amp; Live Dhol Troupes</li>
+              <li>Cocktails &amp; Finger Food Stations</li>
+              <li>Laser Light Spectacle &amp; CO2 Jets</li>
+              <li>Choreographer Assist for Couples</li>
+            </ul>
+            <a href="contact.html?package=sangeet" class="btn btn-outline" style="width: 100%;">Book Package</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 6: INTERACTIVE CELEBRATION COST ESTIMATOR & FAST BOOKING
+         ========================================================================== -->
+    <section class="section" data-animate="fade-up" data-duration="800" id="estimator-section">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="section-badge">TRANSPARENT PRICING</span>
+          <h2 class="section-title">Instant Celebration <span class="gold-text">Cost Calculator</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Select your celebration type, estimated guest count, and decor level for an instant custom estimate.</p>
+        </div>
+
+        <div class="estimator-box">
+          <div class="estimator-grid">
+            <div>
+              <div class="estimator-form-group">
+                <label class="estimator-label" for="est-event-type">Celebration Type</label>
+                <select id="est-event-type" class="estimator-select">
+                  <option value="65">Royal Wedding &amp; Reception (₹65 / guest)</option>
+                  <option value="45">Grand Birthday Party (₹45 / guest)</option>
+                  <option value="50">Dance &amp; Sangeet DJ Night (₹50 / guest)</option>
+                  <option value="35">Baby Naming &amp; Cradle Ceremony (₹35 / guest)</option>
+                </select>
+              </div>
+
+              <div class="estimator-form-group">
+                <label class="estimator-label" for="est-guest-count">Estimated Guest Count</label>
+                <input type="number" id="est-guest-count" class="estimator-input" min="30" max="2500" value="150">
+              </div>
+
+              <div class="estimator-form-group">
+                <label class="estimator-label" for="est-decor-tier">Design &amp; Production Tier</label>
+                <select id="est-decor-tier" class="estimator-select">
+                  <option value="1200">Classic Gold Decor (+₹1,200)</option>
+                  <option value="2800" selected>Royal Palace Production (+₹2,800)</option>
+                  <option value="5500">Imperial Luxury &amp; 4K Cinema (+₹5,500)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="estimator-total-card">
+              <span style="font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--color-accent-gold);">ESTIMATED BUDGET</span>
+              <div class="estimator-total-num" id="est-total-amount">₹9,550</div>
+              <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px;">
+                Includes venue coordination, decor, catering, guest registration, and on-site event manager.
+              </p>
+              <a href="contact.html" class="btn btn-primary" style="width: 100%;">Lock in Your Date</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 7: GRAND PHOTOGRAPHY GALLERY (MOMENTS SHOWCASE)
+         ========================================================================== -->
+    <section class="section section-alt" data-animate="fade-up" data-duration="800" id="moments-gallery">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="section-badge">MOMENTS OF SPLENDOR</span>
+          <h2 class="section-title">A Visual Journey of <span class="gold-text">Royal Celebrations</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Glimpses of real weddings, couple dances, joyful birthdays, and blessed cradle ceremonies.</p>
+        </div>
+
+        <div class="gallery-grid" data-stagger>
+          <div class="gallery-item large">
+            <img src="assets/img-1519741497674-611481863552.webp" alt="Royal Wedding Banquet" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-category">Royal Wedding</span>
+              <h4 class="gallery-title">The Grand Vivanta Palace Nuptials</h4>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/img-1516450360452-9312f5e86fc7.webp" alt="Sangeet Dance Night" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-category">Sangeet &amp; Dance</span>
+              <h4 class="gallery-title">Euphoric Sangeet Night</h4>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/img-1464349095431-e9a21285b5f3.webp" alt="Birthday Cake Celebration" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-category">Birthday Gala</span>
+              <h4 class="gallery-title">Golden 21st Milestone Cake</h4>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/img-1519689680058-324335c77eba.webp" alt="Baby Cradle Ceremony" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-category">Baby Naming</span>
+              <h4 class="gallery-title">Floral Cradle Naming Ceremony</h4>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/img-1511285560929-80b456fea0bc.webp" alt="Sunset Couple Dance" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-category">Couple Dance</span>
+              <h4 class="gallery-title">Sunset First Dance Under Fairy Lights</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 8: CELEBRATION ROADMAP TIMELINE (NON-BOX REPLACEMENT)
+         "The 4-Step Celebration Roadmap: From Vision to Royal Reality"
+         ========================================================================== -->
+    <section class="section" data-animate="fade-up" data-duration="800">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="section-badge">OUR ARTISANAL JOURNEY</span>
+          <h2 class="section-title">The Four-Step <span class="gold-text">Celebration Roadmap</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">How we take your celebration from an initial dream to a flawless, unforgettable reality.</p>
+        </div>
+
+        <div class="roadmap-timeline-wrapper">
+          <div class="roadmap-track">
+            <!-- Step 1 -->
+            <div class="roadmap-step">
+              <div class="roadmap-node-circle">I</div>
+              <div class="roadmap-step-num">PHASE I</div>
+              <h3 class="roadmap-step-title">Vision &amp; Design</h3>
+              <p class="roadmap-step-desc">Private curator session to select thematic color palettes, custom mandap concepts, or birthday wonderland stories.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="roadmap-step">
+              <div class="roadmap-node-circle">II</div>
+              <div class="roadmap-step-num">PHASE II</div>
+              <h3 class="roadmap-step-title">Digital Passes &amp; RSVP</h3>
+              <p class="roadmap-step-desc">Deploy bespoke QR digital invitation cards and establish VIP guest concierge protocols with instant tracking.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="roadmap-step">
+              <div class="roadmap-node-circle">III</div>
+              <div class="roadmap-step-num">PHASE III</div>
+              <h3 class="roadmap-step-title">Artisan Production</h3>
+              <p class="roadmap-step-desc">Execution of floral architecture, 7-course feast preparation, sound engineering, and lighting calibrations.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="roadmap-step">
+              <div class="roadmap-node-circle">IV</div>
+              <div class="roadmap-step-num">PHASE IV</div>
+              <h3 class="roadmap-step-title">Flawless Day-Of Joy</h3>
+              <p class="roadmap-step-desc">Dedicated on-site marshals managing check-in, guest transitions, stage queues, and 4K aerial drone filming.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 9: TESTIMONIALS SECTION (PRD 6-CARD GRID FOR CELEBRATIONS)
+         ========================================================================== -->
+    <section class="section section-alt" data-animate="fade-up" data-duration="800">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="section-badge">TESTIMONIALS</span>
+          <h2 class="section-title">Our Trusted <span class="gold-text">Families &amp; Clients</span></h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Read heartfelt stories from families who celebrated their most cherished milestones with Stackly.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Card 1: Wedding -->
+          <div class="testimonial-card">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-body">
+              Our 3-day royal palace wedding in Salem was absolute magic. The digital QR invitations for 900 guests worked effortlessly, and the floral mandap took our breath away.
+            </p>
+            <div class="testimonial-author">
+              <img class="author-avatar" src="assets/img-1534528741775-53994a69daeb.webp" alt="Priya &amp; Karthik">
+              <div class="author-info">
+                <h5>Priya &amp; Karthik Raman</h5>
+                <p>Bride &amp; Groom, Royal Wedding</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Birthday -->
+          <div class="testimonial-card">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-body">
+              We threw my daughter's 18th neon carnival birthday bash with Stackly. The celebrity DJ and laser dancefloor had all 200 teenagers dancing until midnight!
+            </p>
+            <div class="testimonial-author">
+              <img class="author-avatar" src="assets/img-1507003211169-0a1dd7228f2d.webp" alt="Vikram Sethi">
+              <div class="author-info">
+                <h5>Vikram Sethi</h5>
+                <p>Host, Grand 18th Birthday</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Baby Naming -->
+          <div class="testimonial-card">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-body">
+              The cradle ceremony for our newborn baby was traditional, serene, and beautifully decorated. Stackly handled everything from the flower swing to the priest arrangements.
+            </p>
+            <div class="testimonial-author">
+              <img class="author-avatar" src="assets/img-1500648767791-00dcc994a43e.webp" alt="Ananya &amp; Suresh">
+              <div class="author-info">
+                <h5>Ananya &amp; Suresh</h5>
+                <p>Parents, Baby Naming Ceremony</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Sangeet Dance -->
+          <div class="testimonial-card">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-body">
+              The Sangeet night was the highlight of our wedding week! The sound setup, stage lighting, and couple entrance pyrotechnics were straight out of a movie.
+            </p>
+            <div class="testimonial-author">
+              <img class="author-avatar" src="assets/img-1492562080023-ab3db95bfbce.webp" alt="Rohan &amp; Meera">
+              <div class="author-info">
+                <h5>Rohan &amp; Meera</h5>
+                <p>Couple, Sangeet &amp; Dance Night</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: 1st Birthday -->
+          <div class="testimonial-card">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-body">
+              Organizing our baby's 1st birthday was completely stress-free. The hot air balloon theme, customized photo studio, and gourmet kid-friendly snacks were a huge hit.
+            </p>
+            <div class="testimonial-author">
+              <img class="author-avatar" src="assets/img-1517841905240-472988babdf9.webp" alt="Deepika &amp; Arjun">
+              <div class="author-info">
+                <h5>Deepika &amp; Arjun</h5>
+                <p>Parents, 1st Birthday Wonder</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Anniversary -->
+          <div class="testimonial-card">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-body">
+              For our parents' 50th Golden Anniversary, Stackly curated an intimate yet grand gala with vintage violinists and live video tributes. Highly recommended!
+            </p>
+            <div class="testimonial-author">
+              <img class="author-avatar" src="assets/img-1472099645785-5658abf4ff4e.webp" alt="Gautam Nambiar">
+              <div class="author-info">
+                <h5>Gautam Nambiar</h5>
+                <p>Organizer, Golden Jubilee Gala</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 10: ROYAL CALL-TO-ACTION (CTA) SECTION (PRD PAGES 22-23)
+         ========================================================================== -->
+    <section class="cta-section" data-animate="scale-in">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="cta-title">Ready to Craft an <span class="gold-text">Unforgettable</span> Celebration?</h2>
+          <p class="cta-desc">
+            Let Stackly's royal event architects design, manage, and execute your dream wedding, birthday gala, dance night, or baby naming ceremony.
+          </p>
+          <div class="cta-button-group">
+            <a href="events.html" class="btn btn-primary">RESERVE DATE</a>
+            <a href="contact.html" class="btn btn-secondary">CONTACT CONCIERGE</a>
+            <a href="team.html" class="btn btn-outline">MEET OUR CURATORS</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       100% FULL-WIDTH FOOTER (PRD PAGES 23-24)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-brand" style="margin-bottom: 8px;">
+            <svg class="nav-brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="398 82 212 290" aria-label="Stackly Logo"><defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f6e27a"/><stop offset="50%" style="stop-color:#d4af37"/><stop offset="100%" style="stop-color:#aa771c"/></linearGradient></defs><path fill="url(#goldGrad)" d="M419.713867,256.179962 C408.001251,235.739304 410.215973,215.613876 419.889709,195.679504 C426.373138,182.319229 436.255493,171.444672 446.508270,160.904480 C457.075165,150.041229 468.783997,140.348602 478.792694,128.896606 C487.411407,119.035004 494.797852,108.464394 500.031921,96.425682 C500.738983,94.799370 501.001617,92.854477 502.785980,91.712807 C503.214905,91.838028 503.879059,91.821617 504.103485,92.127670 C514.526489,106.341171 522.003967,121.483376 518.287415,139.859406 C515.933533,151.498276 508.987885,160.308563 500.296600,167.942245 C487.788574,178.928223 473.634369,187.949692 462.046570,200.037262 C456.219025,206.116135 451.191589,212.659836 449.149933,221.054688 C445.376373,236.570572 454.272034,249.198563 470.197021,250.779221 C485.241028,252.272446 499.302216,248.880798 512.632202,241.996979 C514.021362,241.279602 515.213196,239.793518 517.062500,240.547546 C517.833252,242.063324 516.690857,242.794266 515.917847,243.562866 C502.480865,256.923462 487.519073,267.973206 468.591339,271.949402 C447.923096,276.291199 431.269562,272.383606 419.713867,256.179962Z"/><path fill="url(#goldGrad)" d="M536.351807,311.352905 C521.089722,325.623138 508.631836,341.451172 501.644409,361.304535 C500.580017,360.856842 499.799347,360.777496 499.458496,360.348633 C491.323975,350.113098 485.458466,338.909088 484.707672,325.531189 C484.034546,313.536499 489.236786,303.909576 496.947052,295.363251 C506.737030,284.511749 519.089050,276.702271 530.329102,267.573334 C539.676453,259.981689 548.930542,252.352356 553.649658,240.719803 C556.247925,234.315125 556.803040,227.722214 555.167542,221.122284 C551.964783,208.197189 539.399353,200.886032 526.174622,203.877502 C513.911682,206.651428 503.242737,212.702515 493.079834,219.823700 C492.039246,220.552856 491.267578,221.851700 489.661957,221.557190 C488.659760,220.289383 489.653076,219.345703 490.287292,218.480408 C503.850159,199.976334 521.506714,187.674316 544.321167,183.636948 C574.742554,178.253418 599.437622,199.883118 594.804749,234.346802 C592.539368,251.198425 583.628967,264.794067 572.581299,277.156372 C561.558105,289.491241 548.610413,299.803345 536.351807,311.352905Z"/></svg>
+            <div class="nav-brand-text" style="font-size: 21px;">STACKLY<span>.</span></div>
+          </div>
+          <p>
+            We help families and organizations create lifetime memories through luxury event production, bespoke catering, digital invitations, and flawless on-site coordination.
+          </p>
+          <div class="footer-newsletter-title">Grow With Our Weekly Marketing Tips</div>
+          <form class="footer-newsletter-form">
+            <input type="email" class="footer-newsletter-input" placeholder="Enter your email" required aria-label="Newsletter email input">
+            <button type="submit" class="footer-newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Celebrations</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?filter=wedding">Royal Weddings &amp; Receptions</a></li>
+            <li><a href="events.html?filter=birthday">Grand Milestone Birthdays</a></li>
+            <li><a href="events.html?filter=dance">Sangeet &amp; DJ Dance Nights</a></li>
+            <li><a href="events.html?filter=baby-naming">Baby Naming &amp; Cradle Ceremonies</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="blog.html">Celebration Journal</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Headquarters</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Stackly Salem Office</a></li>
+            <li><a href="tel:+919876543210">+91 9876543210</a></li>
+            <li><a href="mailto:support@thestackly.com">support@thestackly.com</a></li>
+            <li><a href="contact.html#salem-map-section">Chinna Tirupathi, Salem - 636008</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2026 Digital Edge Agency / Stackly. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms &amp; Conditions</a>
+          <a href="contact.html">Support</a>
+        </div>
+        <div class="footer-socials">
+          <a href="https://facebook.com" class="footer-social-link" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="https://instagram.com" class="footer-social-link" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+          <a href="https://x.com" class="footer-social-link" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a>
+          <a href="https://linkedin.com" class="footer-social-link" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Pass Booking Modal -->
+  <div class="modal-overlay" id="registration-modal" role="dialog" aria-modal="true" aria-labelledby="modal-event-name">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span style="font-size: 11px; text-transform: uppercase; color: var(--color-accent-gold); letter-spacing: 1px;">Royal Celebration Pass</span>
+          <h3 class="modal-title" id="modal-event-name">Celebration Registration</h3>
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div id="modal-reg-success" style="display: none;"></div>
+
+      <form id="registration-form">
+        <div class="modal-form-group">
+          <label class="modal-label" for="reg-fullname">Primary Guest / Host Name *</label>
+          <input type="text" id="reg-fullname" class="modal-input" placeholder="e.g. Alexander &amp; Sophia" required>
+        </div>
+
+        <div class="modal-form-group">
+          <label class="modal-label" for="reg-email">Email Address *</label>
+          <input type="email" id="reg-email" class="modal-input" placeholder="e.g. host@domain.com" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 14px;">
+          <div class="modal-form-group">
+            <label class="modal-label" for="ticket-tier">Pass Tier</label>
+            <select id="ticket-tier" class="modal-select">
+              <option value="1">Standard Guest Pass</option>
+              <option value="1.8">VIP Family Table Access</option>
+              <option value="2.5">Royal Deluxe Pass (All Inclusive)</option>
+            </select>
+          </div>
+
+          <div class="modal-form-group">
+            <label class="modal-label" for="ticket-quantity">Passes</label>
+            <input type="number" id="ticket-quantity" class="modal-input" min="1" max="20" value="1" required>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px; background: rgba(10, 10, 12, 0.8); border: 1px solid var(--color-border-gold); border-radius: var(--radius-sm); margin-bottom: 20px;">
+          <span style="font-size: 14px; color: var(--color-text-secondary);">Total Payable:</span>
+          <span id="total-price-display" style="font-size: 22px; font-weight: 800; color: var(--color-accent-gold-light);">₹250</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm Invitation Pass</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/loader.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

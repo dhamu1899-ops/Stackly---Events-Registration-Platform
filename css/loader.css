@@ -1,0 +1,217 @@
+/* ==========================================================================
+   STACKLY THEME - LUXURY BLACK & GOLD LOADER (PRD PAGES 4-15 COMPLIANT)
+   ========================================================================== */
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-bg-dark, #0a0a0c);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  overflow: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.loader-container.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Brand Logo (centered) */
+.loader-logo-wrapper {
+  margin-bottom: 35px;
+  animation: loaderLogoFadeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* The new S-shaped gold brand mark — tall viewBox, size by height */
+.loader-logo {
+  height: 110px;
+  width: auto;
+  filter: drop-shadow(0 0 24px rgba(212, 175, 55, 0.55)) drop-shadow(0 0 8px rgba(246, 226, 122, 0.4));
+}
+
+/* Spinner Container */
+.loader-spinner-wrapper {
+  position: relative;
+  width: 72px; /* Desktop: 60-80px */
+  height: 72px;
+  margin-bottom: 25px;
+}
+
+/* Pure CSS circular progress ring spinner (60 FPS, GPU accelerated) */
+.loader-spinner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6px solid #2a2a35; /* Base Ring: Muted Dark Graphite */
+  border-top-color: #d4af37; /* Active Ring: Radiant Gold */
+  border-right-color: #f6e27a;
+  box-sizing: border-box;
+  animation: loaderSpin 2s linear infinite;
+  will-change: transform;
+}
+
+.loader-spinner::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: #d4af37;
+  border-radius: 50%;
+  opacity: 0.75;
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.8);
+}
+
+/* Loading Primary Text */
+.loader-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-accent-gold-light, #f6e27a);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: loaderTextFadeUp 1s ease-out 0.4s forwards;
+}
+
+/* Loading Subtext */
+.loader-subtext {
+  font-size: 13px;
+  color: var(--color-text-secondary, #b8b2a7);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: loaderTextFadeUp 1s ease-out 0.6s forwards;
+}
+
+@keyframes loaderSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderLogoFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes loaderTextFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .loader-logo {
+    width: 100px;
+  }
+  .loader-spinner-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+  .loader-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .loader-container {
+    padding: 60px 20px 40px;
+  }
+  .loader-logo {
+    width: 72px;
+  }
+  .loader-logo-wrapper {
+    margin-bottom: 36px;
+  }
+  .loader-spinner-wrapper {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 28px;
+  }
+  .loader-spinner {
+    border-width: 5px;
+  }
+  .loader-text {
+    font-size: 15px;
+  }
+  .loader-subtext {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 374px) {
+  .loader-container {
+    padding: 40px 15px;
+  }
+  .loader-logo {
+    width: 50px;
+  }
+  .loader-spinner-wrapper {
+    width: 45px;
+    height: 45px;
+  }
+  .loader-text {
+    font-size: 14px;
+  }
+}
+
+/* Loader Brand Logo & Title Lockup */
+.loader-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.loader-logo-svg {
+  height: 80px;
+  width: auto;
+  filter: drop-shadow(0 0 22px rgba(212, 175, 55, 0.75));
+  animation: loaderLogoFadeIn 0.8s ease-in-out forwards;
+}
+
+.loader-brand-title {
+  font-family: var(--font-heading, "Cinzel", serif);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.loader-brand-title span {
+  color: var(--color-accent-gold, #d4af37);
+  text-shadow: 0 0 14px rgba(212, 175, 55, 0.8);
+}

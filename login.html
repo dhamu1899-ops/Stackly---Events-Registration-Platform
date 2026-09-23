@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login • Stackly Celebration Platform | Role-Based Portal</title>
+  <meta name="description" content="Sign in to your Stackly Celebration account to access your royal wedding passes, birthday galas, Sangeet dance tickets, and cradle ceremony itineraries.">
+  
+  <!-- Fonts & Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="page-auth">
+
+  <!-- Standalone Minimal Header -->
+  <header class="standalone-minimal-header">
+    <a href="index.html" class="nav-brand" aria-label="Stackly Homepage">
+      <svg class="nav-brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="398 82 212 290" aria-label="Stackly Logo"><defs><linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f6e27a"/><stop offset="50%" style="stop-color:#d4af37"/><stop offset="100%" style="stop-color:#aa771c"/></linearGradient></defs><path fill="url(#goldGrad)" d="M419.713867,256.179962 C408.001251,235.739304 410.215973,215.613876 419.889709,195.679504 C426.373138,182.319229 436.255493,171.444672 446.508270,160.904480 C457.075165,150.041229 468.783997,140.348602 478.792694,128.896606 C487.411407,119.035004 494.797852,108.464394 500.031921,96.425682 C500.738983,94.799370 501.001617,92.854477 502.785980,91.712807 C503.214905,91.838028 503.879059,91.821617 504.103485,92.127670 C514.526489,106.341171 522.003967,121.483376 518.287415,139.859406 C515.933533,151.498276 508.987885,160.308563 500.296600,167.942245 C487.788574,178.928223 473.634369,187.949692 462.046570,200.037262 C456.219025,206.116135 451.191589,212.659836 449.149933,221.054688 C445.376373,236.570572 454.272034,249.198563 470.197021,250.779221 C485.241028,252.272446 499.302216,248.880798 512.632202,241.996979 C514.021362,241.279602 515.213196,239.793518 517.062500,240.547546 C517.833252,242.063324 516.690857,242.794266 515.917847,243.562866 C502.480865,256.923462 487.519073,267.973206 468.591339,271.949402 C447.923096,276.291199 431.269562,272.383606 419.713867,256.179962Z"/><path fill="url(#goldGrad)" d="M536.351807,311.352905 C521.089722,325.623138 508.631836,341.451172 501.644409,361.304535 C500.580017,360.856842 499.799347,360.777496 499.458496,360.348633 C491.323975,350.113098 485.458466,338.909088 484.707672,325.531189 C484.034546,313.536499 489.236786,303.909576 496.947052,295.363251 C506.737030,284.511749 519.089050,276.702271 530.329102,267.573334 C539.676453,259.981689 548.930542,252.352356 553.649658,240.719803 C556.247925,234.315125 556.803040,227.722214 555.167542,221.122284 C551.964783,208.197189 539.399353,200.886032 526.174622,203.877502 C513.911682,206.651428 503.242737,212.702515 493.079834,219.823700 C492.039246,220.552856 491.267578,221.851700 489.661957,221.557190 C488.659760,220.289383 489.653076,219.345703 490.287292,218.480408 C503.850159,199.976334 521.506714,187.674316 544.321167,183.636948 C574.742554,178.253418 599.437622,199.883118 594.804749,234.346802 C592.539368,251.198425 583.628967,264.794067 572.581299,277.156372 C561.558105,289.491241 548.610413,299.803345 536.351807,311.352905Z"/></svg>
+      <div class="nav-brand-text">STACKLY<span>.</span></div>
+    </a>
+    <a href="index.html" class="btn-return-home">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to Website
+    </a>
+  </header>
+
+  <!-- ==========================================================================
+       MAIN AUTHENTICATION SECTION: ROLE-BASED LOGIN
+       ========================================================================== -->
+  <main class="auth-page-wrapper">
+    <div class="auth-card">
+      
+      <!-- Brand Logo Header & Title -->
+      <div class="auth-header">
+        <div class="auth-brand-logo-wrap" style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 18px;">
+          <svg class="auth-brand-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="398 82 212 290" style="height: 52px; width: auto; filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.75));" aria-label="Stackly Logo">
+            <defs>
+              <linearGradient id="authGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#f6e27a"/>
+                <stop offset="50%" style="stop-color:#d4af37"/>
+                <stop offset="100%" style="stop-color:#aa771c"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#authGoldGrad)" d="M419.713867,256.179962 C408.001251,235.739304 410.215973,215.613876 419.889709,195.679504 C426.373138,182.319229 436.255493,171.444672 446.508270,160.904480 C457.075165,150.041229 468.783997,140.348602 478.792694,128.896606 C487.411407,119.035004 494.797852,108.464394 500.031921,96.425682 C500.738983,94.799370 501.001617,92.854477 502.785980,91.712807 C503.214905,91.838028 503.879059,91.821617 504.103485,92.127670 C514.526489,106.341171 522.003967,121.483376 518.287415,139.859406 C515.933533,151.498276 508.987885,160.308563 500.296600,167.942245 C487.788574,178.928223 473.634369,187.949692 462.046570,200.037262 C456.219025,206.116135 451.191589,212.659836 449.149933,221.054688 C445.376373,236.570572 454.272034,249.198563 470.197021,250.779221 C485.241028,252.272446 499.302216,248.880798 512.632202,241.996979 C514.021362,241.279602 515.213196,239.793518 517.062500,240.547546 C517.833252,242.063324 516.690857,242.794266 515.917847,243.562866 C502.480865,256.923462 487.519073,267.973206 468.591339,271.949402 C447.923096,276.291199 431.269562,272.383606 419.713867,256.179962Z"/>
+            <path fill="url(#authGoldGrad)" d="M536.351807,311.352905 C521.089722,325.623138 508.631836,341.451172 501.644409,361.304535 C500.580017,360.856842 499.799347,360.777496 499.458496,360.348633 C491.323975,350.113098 485.458466,338.909088 484.707672,325.531189 C484.034546,313.536499 489.236786,303.909576 496.947052,295.363251 C506.737030,284.511749 519.089050,276.702271 530.329102,267.573334 C539.676453,259.981689 548.930542,252.352356 553.649658,240.719803 C556.247925,234.315125 556.803040,227.722214 555.167542,221.122284 C551.964783,208.197189 539.399353,200.886032 526.174622,203.877502 C513.911682,206.651428 503.242737,212.702515 493.079834,219.823700 C492.039246,220.552856 491.267578,221.851700 489.661957,221.557190 C488.659760,220.289383 489.653076,219.345703 490.287292,218.480408 C503.850159,199.976334 521.506714,187.674316 544.321167,183.636948 C574.742554,178.253418 599.437622,199.883118 594.804749,234.346802 C592.539368,251.198425 583.628967,264.794067 572.581299,277.156372 C561.558105,289.491241 548.610413,299.803345 536.351807,311.352905Z"/>
+          </svg>
+          <div style="font-family: var(--font-heading); font-size: 20px; font-weight: 800; letter-spacing: 3px; color: #ffffff;">
+            STACKLY<span style="color: var(--color-accent-gold); text-shadow: 0 0 12px rgba(212, 175, 55, 0.8);">.</span>
+          </div>
+        </div>
+        <h1 class="auth-title">Palatial Access</h1>
+        <p class="auth-subtitle">Sign in to manage your celebration tickets, QR passes, and bespoke event itineraries.</p>
+      </div>
+
+      <!-- Role Selector Tabs: User vs Admin -->
+      <div class="role-tabs-container" role="tablist">
+        <button type="button" class="role-tab-btn active" data-role="user" role="tab" aria-selected="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          Client / Host
+        </button>
+        <button type="button" class="role-tab-btn" data-role="admin" role="tab" aria-selected="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          Admin / Marshal
+        </button>
+      </div>
+
+      <!-- Live Feedback Alert Box -->
+      <div id="login-alert-box" class="auth-alert-message" role="alert"></div>
+
+      <!-- Login Form -->
+      <form class="auth-form" id="stackly-login-form" novalidate>
+        
+        <!-- Email Input -->
+        <div class="auth-form-group">
+          <label for="login-email" class="auth-label">Account Email</label>
+          <div class="auth-input-wrapper">
+            <div class="auth-input-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <input 
+              type="email" 
+              id="login-email" 
+              class="auth-input" 
+              placeholder="e.g. client@stackly.com" 
+              autocomplete="email"
+              required>
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="auth-form-group">
+          <label for="login-password" class="auth-label">Security Password</label>
+          <div class="auth-input-wrapper">
+            <div class="auth-input-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <input 
+              type="password" 
+              id="login-password" 
+              class="auth-input" 
+              placeholder="Enter your password" 
+              autocomplete="current-password"
+              required>
+            <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="7" r="3"></circle></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Options: Remember & Forgot -->
+        <div class="auth-options-row">
+          <label class="auth-checkbox-label">
+            <input type="checkbox" class="auth-checkbox" checked>
+            <span>Remember session</span>
+          </label>
+          <a href="contact.html" class="auth-forgot-link">Reset Credentials?</a>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-auth-submit" id="btn-login-submit">
+          <span>Access Celebration Portal</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </form>
+
+      <!-- Register Prompt Link -->
+      <div class="auth-footer-prompt">
+        <span>Planning a new milestone?</span>
+        <a href="register.html">Register as Celebration Host &rarr;</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Standalone Minimal Footer -->
+  <footer class="standalone-minimal-footer">
+    <div class="footer-copyright">
+      &copy; 2026 Stackly Events &amp; Celebration Planners. All rights reserved. &bull; Salem, Tamil Nadu
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

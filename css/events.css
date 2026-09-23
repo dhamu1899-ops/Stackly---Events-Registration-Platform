@@ -1,0 +1,212 @@
+/* ==========================================================================
+   STACKLY THEME - BESPOKE EVENTS DIRECTORY STYLES (events.html)
+   Unique layout: Asymmetrical Hero, Celebration Ribbon, Panoramic Venues
+   ========================================================================== */
+
+/* Section 1: Events Hero with Live Ribbon */
+.events-hero-wrapper {
+  padding: 85px 24px 50px;
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.14) 0%, transparent 65%),
+              linear-gradient(180deg, #0a0a0c 0%, #121216 100%);
+  border-bottom: 1px solid var(--color-border-gold, rgba(212, 175, 55, 0.3));
+  position: relative;
+}
+
+.events-hero-content {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.events-live-counter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(22, 22, 28, 0.9);
+  border: 1px solid var(--color-accent-gold, #d4af37);
+  padding: 8px 22px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-accent-gold-light, #f6e27a);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+}
+
+.events-live-counter-pill .live-dot {
+  width: 8px;
+  height: 8px;
+  background: #2ec4b6;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #2ec4b6;
+  animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Section 2: Celebration Category Ribbon */
+.celebration-ribbon-bar {
+  background: rgba(18, 18, 24, 0.95);
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 24px 0;
+  position: sticky;
+  top: var(--navbar-height, 84px);
+  z-index: 900;
+  backdrop-filter: blur(12px);
+}
+
+.ribbon-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+/* Section 4: Asymmetrical Palatial Venues Layout */
+.venues-asymmetric-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 28px;
+  margin-top: 45px;
+}
+
+.venue-featured-card {
+  position: relative;
+  border-radius: var(--radius-xl, 24px);
+  overflow: hidden;
+  border: 2px solid var(--color-border-gold-strong, rgba(212, 175, 55, 0.7));
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.2);
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+}
+
+.venue-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.6s ease;
+}
+
+.venue-featured-card:hover .venue-bg-image {
+  transform: scale(1.06);
+}
+
+.venue-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(10, 10, 12, 0.2) 0%, rgba(10, 10, 12, 0.95) 75%);
+  z-index: 2;
+}
+
+.venue-details {
+  position: relative;
+  z-index: 3;
+}
+
+.venue-stacked-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.venue-compact-card {
+  background: rgba(22, 22, 28, 0.85);
+  border: 1px solid var(--color-border-gold, rgba(212, 175, 55, 0.3));
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  transition: all 0.3s ease;
+}
+
+.venue-compact-card:hover {
+  border-color: var(--color-accent-gold, #d4af37);
+  transform: translateX(6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.venue-compact-thumb {
+  height: 100%;
+  min-height: 180px;
+  position: relative;
+}
+
+.venue-compact-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.venue-compact-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.venue-compact-body h4 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.venue-badge-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-accent-gold-light, #f6e27a);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/* Section 5: VIP Concierge Suite */
+.concierge-vip-box {
+  background: linear-gradient(135deg, rgba(32, 28, 20, 0.95) 0%, rgba(14, 14, 18, 0.98) 100%);
+  border: 1px solid var(--color-border-gold-strong, rgba(212, 175, 55, 0.7));
+  border-radius: var(--radius-xl);
+  padding: 55px 40px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 35px rgba(212, 175, 55, 0.25);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 40px;
+}
+
+@media (max-width: 1023px) {
+  .venues-asymmetric-grid {
+    grid-template-columns: 1fr;
+  }
+  .venue-featured-card {
+    min-height: 380px;
+  }
+  .concierge-vip-box {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .venue-compact-card {
+    grid-template-columns: 1fr;
+  }
+  .venue-compact-thumb {
+    height: 160px;
+  }
+}

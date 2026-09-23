@@ -1,0 +1,160 @@
+/* ==========================================================================
+   STACKLY THEME - LUXURY BLACK & GOLD DESIGN SYSTEM TOKENS
+   Awwwards / Luxury Editorial Standard: Weddings, Birthdays, Dance, Milestones
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Luxury Black & Gold Color Palette */
+  --color-bg-dark: #070709;                   /* Deep Obsidian Black Base */
+  --color-bg-dark-alt: #0e0e12;               /* Rich Midnight Charcoal */
+  --color-bg-card: rgba(18, 18, 24, 0.72);    /* Glassmorphic Dark Card */
+  --color-bg-card-hover: rgba(28, 28, 38, 0.88);
+  
+  /* Gold Accents & Foil Gradients */
+  --color-accent-gold: #d4af37;               /* Regal Classic Gold */
+  --color-accent-gold-light: #f6e27a;         /* Bright Champagne Gold */
+  --color-accent-gold-warm: #fdf6d8;          /* Warm Ivory Gold */
+  --color-accent-gold-deep: #9d7426;          /* Antique Bronze Gold */
+  --color-accent-hover: #e5c158;
+  --color-accent-glow: rgba(212, 175, 55, 0.35);
+  
+  /* Gradients & Shimmers */
+  --gold-gradient: linear-gradient(135deg, #f6e27a 0%, #d4af37 50%, #aa771c 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #ffffff 0%, #f6e27a 50%, #d4af37 100%);
+  --gold-foil: linear-gradient(135deg, #fdf6d8 0%, #d4af37 35%, #9d7426 70%, #f6e27a 100%);
+  --gold-text-shimmer: linear-gradient(90deg, #d4af37 0%, #fff3c4 25%, #d4af37 50%, #f6e27a 75%, #aa771c 100%);
+  --gold-halo: radial-gradient(circle at center, rgba(212, 175, 55, 0.22) 0%, rgba(7, 7, 9, 0) 70%);
+  --light-leak-gold: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, rgba(7, 7, 9, 0) 70%);
+  --light-leak-corner: radial-gradient(circle at 100% 100%, rgba(212, 175, 55, 0.08) 0%, rgba(7, 7, 9, 0) 65%);
+  
+  /* Glassmorphism & Atmospheric Borders */
+  --glass-bg: rgba(14, 14, 18, 0.72);
+  --glass-card: rgba(18, 18, 24, 0.65);
+  --glass-border: rgba(212, 175, 55, 0.22);
+  --glass-blur: blur(24px) saturate(180%);
+  --color-border-muted: rgba(255, 255, 255, 0.08);
+  --color-border-gold: rgba(212, 175, 55, 0.3);
+  --color-border-gold-strong: rgba(212, 175, 55, 0.75);
+  --gold-border-glow: 0 0 25px rgba(212, 175, 55, 0.2), inset 0 0 15px rgba(212, 175, 55, 0.05);
+  
+  /* Text & Hierarchy */
+  --color-text-primary: #f8f8f4;              /* Pearl / Crisp White */
+  --color-text-secondary: #beb8ab;            /* Warm Muted Gray */
+  --color-text-muted: #807c74;
+  --color-text-heading: #ffffff;
+  --color-text-dark: #070709;                 /* Dark contrast on gold buttons */
+  
+  /* Secondary Link */
+  --color-link-secondary: #f6e27a;
+  --color-link-hover-bg: rgba(212, 175, 55, 0.14);
+  
+  /* Validation & Status */
+  --color-danger: #ff4d6d;
+  --color-danger-bg: rgba(255, 77, 109, 0.15);
+  --color-success: #2ec4b6;
+  --color-success-bg: rgba(46, 196, 182, 0.15);
+  --color-warning: #ffaa00;
+  
+  /* Editorial Typography */
+  --font-heading: 'Cinzel', Georgia, 'Times New Roman', serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family: var(--font-sans);
+  
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+  --line-height-base: 1.65;
+  
+  /* Radii & Luxury Shadows */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.55);
+  --shadow-md: 0 12px 36px rgba(0, 0, 0, 0.75);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.85);
+  --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.28);
+  --shadow-dropdown: 0 20px 50px rgba(0, 0, 0, 0.95);
+
+  /* Transitions */
+  --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Sizing */
+  --navbar-height: 84px;
+  --max-content-width: 1280px;
+}
+
+/* Base resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+h1, h2, h3, h4, .brand-text, .section-title, .hero-title, .display-font {
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+
+.cormorant, .italic-accent, blockquote, .quote-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+a {
+  color: var(--color-accent-gold);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent-gold-light);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 3px;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
