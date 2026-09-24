@@ -572,8 +572,32 @@
         triggerCsvDownload(csv, `stackly-financial-audit-${Date.now()}.csv`);
       });
 
-      // (C) Concierge Approvals in Admin View
+      // (C) Concierge Approvals & Stored Inquiries in Admin View (ERP-004)
       const conciergeSection = document.getElementById('tab-admin-concierge');
+      const conciergeTbody = conciergeSection?.querySelector('tbody');
+
+      // Load and render persistent contact enquiries from website
+      try {
+        const storedEnquiries = localStorage.getItem('stackly_contact_enquiries');
+        if (storedEnquiries && conciergeTbody) {
+          const enquiries = JSON.parse(storedEnquiries);
+          enquiries.forEach(enq => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td><strong>${enq.name}</strong><br><small style="color: var(--color-text-secondary);">${enq.email}${enq.phone ? ' • ' + enq.phone : ''}</small></td>
+              <td>${enq.subject || 'Website Inquiry'}</td>
+              <td>${enq.message || 'General bespoke milestone inquiry'}</td>
+              <td><span class="pass-category-pill">Public Inquiry</span></td>
+              <td><span class="pass-status-pill" style="background: rgba(255, 149, 0, 0.2); color: #ff9500;">${enq.status || 'Pending Review'}</span></td>
+              <td><button type="button" class="btn btn-primary" style="min-height: 30px; padding: 2px 10px; font-size: 11px;">Approve</button></td>
+            `;
+            conciergeTbody.prepend(tr);
+          });
+        }
+      } catch (err) {
+        console.warn('Error rendering stored enquiries:', err);
+      }
+
       conciergeSection?.querySelectorAll('tbody tr').forEach(row => {
         const approveBtn = row.querySelector('.btn-primary');
         const updateBtn = row.querySelector('.btn-secondary');

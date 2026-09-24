@@ -122,8 +122,38 @@
         return;
       }
 
-      // All Valid: Display positive feedback
+      // ERP-004: Create and persist enquiry to backend storage (localStorage)
+      const enquiryId = 'ENQ-' + Math.floor(100000 + Math.random() * 900000);
+      const newEnquiry = {
+        id: enquiryId,
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        phone: phoneInput ? phoneInput.value.trim() : '',
+        subject: subjectInput.value.trim(),
+        message: messageInput.value.trim(),
+        createdAt: new Date().toISOString(),
+        date: new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
+        status: 'Pending Review'
+      };
+
+      try {
+        const stored = localStorage.getItem('stackly_contact_enquiries');
+        const list = stored ? JSON.parse(stored) : [];
+        list.unshift(newEnquiry);
+        localStorage.setItem('stackly_contact_enquiries', JSON.stringify(list));
+      } catch (err) {
+        console.warn('Unable to store enquiry in localStorage:', err);
+      }
+
+      // Display positive feedback with tracking code
       if (successBanner) {
+        successBanner.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <div>
+            <div style="font-weight: 700; margin-bottom: 2px;">Inquiry Successfully Registered (${enquiryId})</div>
+            <div style="font-size: 13px; opacity: 0.9;">Thank you, ${newEnquiry.name}. Your celebration request has been routed to our Salem Concierge staff for review within 24 hours.</div>
+          </div>
+        `;
         successBanner.classList.add('active');
       }
 

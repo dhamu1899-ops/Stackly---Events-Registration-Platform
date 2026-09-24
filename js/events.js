@@ -166,15 +166,84 @@
       totalPriceDisplay.textContent = `₹${total}`;
     }
 
+    // Email format validator (ERP-003)
+    function isValidEmail(email) {
+      if (!email) return false;
+      const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return re.test(String(email).trim());
+    }
+
+    function showModalError(inputEl, msg) {
+      if (!inputEl) return;
+      clearModalError(inputEl);
+      inputEl.style.borderColor = '#ff4d4f';
+      inputEl.classList.add('has-error');
+      const err = document.createElement('div');
+      err.className = 'modal-field-error';
+      err.style.color = '#ff6b6b';
+      err.style.fontSize = '12px';
+      err.style.marginTop = '4px';
+      err.style.fontWeight = '500';
+      err.textContent = '⚠ ' + msg;
+      inputEl.parentElement.appendChild(err);
+      inputEl.focus();
+    }
+
+    function clearModalError(inputEl) {
+      if (!inputEl) return;
+      inputEl.style.borderColor = '';
+      inputEl.classList.remove('has-error');
+      const existing = inputEl.parentElement.querySelector('.modal-field-error');
+      if (existing) existing.remove();
+    }
+
+    const regNameInput = document.getElementById('reg-fullname');
+    const regEmailInput = document.getElementById('reg-email');
+    regNameInput?.addEventListener('input', () => clearModalError(regNameInput));
+    regEmailInput?.addEventListener('input', () => clearModalError(regEmailInput));
+
     ticketSelect?.addEventListener('change', updateTotal);
-    quantityInput?.addEventListener('input', updateTotal);
+    quantityInput?.addEventListener('input', () => {
+      clearModalError(quantityInput);
+      updateTotal();
+    });
     modalClose?.addEventListener('click', closeModal);
     modal?.addEventListener('click', (e) => {
       if (e.target === modal) closeModal();
     });
 
+    // ERP-003: Strictly validate registrant fields & email format before confirming pass
     regForm?.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      const name = regNameInput ? regNameInput.value.trim() : '';
+      const email = regEmailInput ? regEmailInput.value.trim() : '';
+      const qty = quantityInput ? parseInt(quantityInput.value, 10) : 1;
+
+      clearModalError(regNameInput);
+      clearModalError(regEmailInput);
+      clearModalError(quantityInput);
+
+      if (!name || name.length < 2) {
+        showModalError(regNameInput, 'Please enter your full name (at least 2 characters).');
+        return;
+      }
+
+      if (!email) {
+        showModalError(regEmailInput, 'Please enter your email address.');
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        showModalError(regEmailInput, 'Please enter a valid email address (e.g. name@domain.com).');
+        return;
+      }
+
+      if (isNaN(qty) || qty < 1 || qty > 20) {
+        showModalError(quantityInput, 'Please select between 1 and 20 passes.');
+        return;
+      }
+
       const bookingRef = 'ROYAL-' + Math.floor(100000 + Math.random() * 900000);
       if (regForm) regForm.style.display = 'none';
       if (regSuccess) {

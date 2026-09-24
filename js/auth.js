@@ -125,24 +125,39 @@
     }
   }
 
+  // Email Format Validator (RFC 5322 Compliant Client Pattern)
+  function isValidEmail(email) {
+    if (!email) return false;
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(String(email).trim());
+  }
+
   // Register: saves user, but navigates to login.html
+  // Enforces role: 'user' for public registration (ERP-001) & email validation (ERP-005)
   function registerUser(userData) {
     const users = getRegisteredUsers();
     const cleanEmail = (userData.email || '').trim().toLowerCase();
+
+    // ERP-005: Reject malformed email
+    if (!cleanEmail || !isValidEmail(cleanEmail)) {
+      return { success: false, message: 'Please enter a valid email address (e.g. name@domain.com).' };
+    }
+
     const existing = users.find(u => u.email.toLowerCase() === cleanEmail);
     if (existing) {
       return { success: false, message: 'An account with this email already exists. Please log in.' };
     }
 
+    // ERP-001: Public signup flow strictly creates 'user' (Celebration Host) accounts
     const newUser = {
       id: 'usr-' + Date.now(),
       name: userData.name || formatUsernameFromEmail(cleanEmail),
       email: cleanEmail,
       password: userData.password,
-      role: userData.role || 'user',
+      role: 'user', // strictly Client / User
       phone: userData.phone || '',
       interest: userData.interest || 'wedding',
-      tier: userData.role === 'admin' ? 'Chief Event Marshal' : 'VIP Client Host',
+      tier: 'VIP Client Host',
       avatarInitial: (userData.name || cleanEmail).charAt(0).toUpperCase()
     };
 
@@ -154,7 +169,8 @@
     return { success: true, user: newUser };
   }
 
-  // Authenticate user with dynamic username extraction
+  // Authenticate user
+  // ERP-002: Rejects unknown credentials, requires registration first
   function authenticateUser(email, password, selectedRole) {
     const users = getRegisteredUsers();
     const cleanEmail = (email || '').trim().toLowerCase();
@@ -164,39 +180,37 @@
       return { success: false, message: 'Please enter your account email.' };
     }
 
-    // Check if existing registered user matches
-    let found = users.find(u => u.email.toLowerCase() === cleanEmail);
-    if (found) {
-      // If user exists, update password if provided
-      if (cleanPass) {
-        found.password = cleanPass;
-      }
-    } else {
-      // Dynamic user creation from email (e.g. dhamu123@gmail.com -> Dhamu123)
-      const formattedName = formatUsernameFromEmail(cleanEmail);
-      const role = selectedRole || (cleanEmail.includes('admin') ? 'admin' : 'user');
-      found = {
-        id: 'usr-' + Date.now(),
-        name: formattedName,
-        email: cleanEmail,
-        password: cleanPass || 'password',
-        role: role,
-        tier: (role === 'admin') ? 'Chief Event Marshal' : 'VIP Client Host',
-        avatarInitial: formattedName.charAt(0).toUpperCase()
-      };
-      users.push(found);
-      try {
-        localStorage.setItem('stackly_registered_users', JSON.stringify(users));
-      } catch (e) {}
+    if (!isValidEmail(cleanEmail)) {
+      return { success: false, message: 'Please enter a valid email address (e.g. name@domain.com).' };
     }
 
-    // Respect explicitly selected role tab
-    if (selectedRole === 'admin') {
-      found.role = 'admin';
-      found.tier = 'Chief Event Marshal';
-    } else if (selectedRole === 'user' && !cleanEmail.includes('admin')) {
-      found.role = 'user';
-      found.tier = 'VIP Client Host';
+    if (!cleanPass) {
+      return { success: false, message: 'Please enter your password.' };
+    }
+
+    // ERP-002: Look up registered account; reject if not found
+    const found = users.find(u => u.email.toLowerCase() === cleanEmail);
+    if (!found) {
+      return { 
+        success: false, 
+        message: 'No account found with this email. Please register first.' 
+      };
+    }
+
+    // Verify password
+    if (found.password !== cleanPass) {
+      return { 
+        success: false, 
+        message: 'Incorrect password. Please verify and try again.' 
+      };
+    }
+
+    // If logging into Admin Portal tab, verify administrator privileges
+    if (selectedRole === 'admin' && found.role !== 'admin') {
+      return { 
+        success: false, 
+        message: 'Access Denied: This account does not possess administrator privileges. Please switch to the Client Portal tab.' 
+      };
     }
 
     setCurrentUser(found);
@@ -329,6 +343,10 @@
           showFieldTooltip(emailInput, 'Please enter your account email');
           return;
         }
+        if (!isValidEmail(email)) {
+          showFieldTooltip(emailInput, 'Please enter a valid email address (e.g. name@domain.com)');
+          return;
+        }
         removeFieldTooltip(emailInput);
 
         if (!password) {
@@ -383,7 +401,6 @@
       const phoneInput = document.getElementById('reg-phone');
       const passInput = document.getElementById('reg-password');
       const confirmInput = document.getElementById('reg-confirm-password');
-      const roleSelect = document.getElementById('reg-role');
       const interestSelect = document.getElementById('reg-interest');
       const alertBox = document.getElementById('reg-alert-box');
       const submitBtn = document.getElementById('btn-reg-submit');
@@ -395,7 +412,6 @@
         const phone = phoneInput?.value.trim();
         const pass = passInput?.value.trim();
         const confirm = confirmInput?.value.trim();
-        const role = roleSelect?.value || 'user';
         const interest = interestSelect?.value || 'wedding';
 
         if (!name) {
@@ -404,8 +420,13 @@
         }
         removeFieldTooltip(nameInput);
 
+        // ERP-005: Validate email presence AND format
         if (!email) {
           showFieldTooltip(emailInput, 'Please fill in this field');
+          return;
+        }
+        if (!isValidEmail(email)) {
+          showFieldTooltip(emailInput, 'Please enter a valid email address (e.g. name@domain.com)');
           return;
         }
         removeFieldTooltip(emailInput);
@@ -439,7 +460,6 @@
             email,
             phone,
             password: pass,
-            role,
             interest
           });
 
